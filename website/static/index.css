@@ -8,9 +8,13 @@ body, html {
     overflow-x : hidden;
 }
 
-body{
+body {
     background-color: black;
     color: aliceblue;
+}
+
+hr {
+    background-color: aliceblue;
 }
 
 #wrapper {

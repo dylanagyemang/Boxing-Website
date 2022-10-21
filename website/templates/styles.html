@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block title %}Styles{% endblock %}
 {% block content %}
-<h1 class="hiddeny" id="hed">Styles of the Pugilist</h1>
+<h1 class="text-center my-5" id="hed">Styles of the Pugilist</h1>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-right" id="subnav" role='navigation'>
     <button class="toggler closebtn" id="toggler" type="button" onclick='toggleNav()'>
         <span class="navbar-toggler-icon"></span>
@@ -21,120 +22,169 @@
         </div>
     </div>
 </nav> 
-<div><a class="tarrow" id="arr" href="#top"><img src=".\static\arrow-bar-up.svg"></a></div>
-<div class="cont" id="cont">
-<div class="term hidden" id='bp'><h3>Boxer-Puncher</h3></div>
-<div class='wholeterm kid hidden'>
-    <video class="vi1 kid hidden" width="320" height="240" controls muted autoplay autobuffer>
-        <source src=".\static\boxerpuncher.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="def kid hidden">
-        A style of boxer who lacks the speed and mobility of a pure boxer and 
-        the strength and power of a slugger, however he blends the two styles to be able to 
-        compete strongly with either style. While it's possible for them to be outboxed by 
-        a superior boxer or overwhelmed by the power of a slugger he tends to do well against 
-        swarmers, whose natural kryptonite are generally sluggers. The power of a boxer puncher as 
-        well as his mobility allows him to potentially break down swarmers, can confuse and frustrate 
-        sluggers with their mobility, and overpower pure boxers with their power and ability to move fast 
-        enough to cut off the ring.
-        <div class="dboxers kid hidden">
-            Popular boxer-punchers include: Joe Louis, Anthony Joshua, Lennox Lewis and Terrence Crawford*
-        </div>
+
+<div class="wrapper">
+
+    <div>
+        <a class="tarrow" id="arr" href="#top"><img src=".\static\arrow-bar-up.svg"></a>
     </div>
-</div>
-<div class="term hidden" id='brawl'><h3>Brawler</h3></div>
-    <div class="def hidden">
-        An aesthetically rough style of boxing, sometimes referred to as ‘dirty boxing’. Most notably 
-        used by the likes of Jack Johnson and Roberto Duran, brawlers tend to be aggressive and fight 
-        on the inside, using their superior strength to wrestle and punish their opponents in the clinch 
-        using hand traps sneaky uppercuts, savage body work, collar ties and over/underhooks to control 
-        their opponents and break their body and spirit. They tend to do well against swarmers because of their 
-        ability to smother and control their opponent they tend not to fair so well against pure boxers that can adjust
-        or clinch well but also have the ability to dominate boxers if they can't adjust or maintain their rhythm.
-        <div class="dboxers">
-            Popular brawlers include: Roberto Duran, Derek Chisora, Henry Armstrong
-        </div>
-    </div>
-<div class="term hidden" id='cs'><h3>Catch-and-Shoot</h3></div>
-    <div class="def hidden">
-        A crowd friendly style used by the likes of Dillian Whyte, where the boxer depends on his guard 
-        to block and catch punches and return fire before the opponent can return to guard. Used mostly 
-        by close range fighters who have little to no time to avoid or parry incoming blows.
-        <div class="dboxers hidden">
-            Popular fighters that utilize this style include Evander Holyfield, Oscar Valdez, Antonio Margarito
-        </div>
-    </div>
-<div class="term hidden" id='cp'><h3>Counter-Puncher</h3></div>
-    <div class="def hidden">
-        Controls the fight by timing his punches after, during, or right before his opponent throws a punch. 
-        Counter punchers tend to slow the fight pace down and pot shot their opponents. There are many 
-        different styles of Counter punchers and can be found in any and all stances and even different 
-        styles, some counter punchers prefer to fight on the outside waiting for their opponents to come in 
-        and others prefer to apply pressure and force their opponents to throw punches that they can then 
-        counter. 
-            <div class"dboxers hidden">
-                Popular counter punchers include: Floyd Mayweather, Saul 'Canelo' Alvarez, Juan Manuel Marquez
-            </div>
-    </div>
-<div class="term hidden" id='press'><h3>Pressure Fighter</h3></div> 
-    <div class="def hidden">
-        Fights on the front foot, prefers to pin his opponent to the ropes and land at will. 
-            <div class="dboxers hidden">
-                Popular pressure fighters include: Joe Frazier, Jack Dempsey, Shawn Porter
-            </div>
-    </div>
-<div class="term hidden" id='pb'><h3>Pure Boxer</h3></div>
+
+    <div class="cont" id="cont">
+
+    <h2 class="text-center">Boxer-Puncher</h2>
+
     <div class='wholeterm kid hidden'>
-        <video class="vi3 kid hidden" width="320" height="240" controls muted autoplay autobuffer>
-            <source src=".\static\boxerspug.mp4" type="video/mp4">
+        <video class="vi1 kid hidden" width="320" height="240" controls muted autoplay autobuffer>
+            <source src=".\static\boxerpuncher.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+
         <div class="def kid hidden">
-            The purest boxing style popularized by Muhammad Ali. The pure boxer depends on his footwork 
-            and accuracy to snipe and overwhelm his opponent with clean scoring punches. While they 
-            generally lack power; either due to depending on their mobility and hence, can’t properly 
-            “sit down” on their punches or they developed a pure boxing style to compensate for their 
-            lack of natural ability to hurt their opponents, they depend on frustrating their opponents 
-            and dragging them to the finish line, forcing their opponents to expend energy by missing 
-            power shots and chasing the boxer from post to post. Pure boxers are generally referred to 
-            as out-fighters however some pure boxers can fight on the 'inside' or 'outside'.
-                <div class="dboxers kid hidden"> 
-                    Popular boxers include: Floyd Mayweather, Muhammad Ali Larry Holmes and Ricardo Lopez.
-                </div>
+            <p>A style of boxer who lacks the speed and mobility of a pure boxer and
+            the strength and power of a slugger, however he blends the two styles to be able to
+            compete strongly with either style. While it's possible for them to be outboxed by
+            a superior boxer or overwhelmed by the power of a slugger he tends to do well against
+            swarmers, whose natural kryptonite are generally sluggers. The power of a boxer puncher as
+            well as his mobility allows him to potentially break down swarmers, can confuse and frustrate
+            sluggers with their mobility, and overpower pure boxers with their power and ability to move fast
+            enough to cut off the ring.</p>
+
+            <p class="text-center font-weight-bold"><i>Popular boxer-punchers include: Joe Louis, Anthony Joshua, Lennox Lewis and Terrence Crawford*</i></p>
         </div>
     </div>
-<div class="term hidden" id='slug'><h3>Slugger</h3></div>
+
+    <hr>
+
+    <h2 class="text-center">Brawler</h2>
+
+    <div>
+        <p>An aesthetically rough style of boxing, sometimes referred to as ‘dirty boxing’. Most notably
+        used by the likes of Jack Johnson and Roberto Duran, brawlers tend to be aggressive and fight
+        on the inside, using their superior strength to wrestle and punish their opponents in the clinch
+        using hand traps sneaky uppercuts, savage body work, collar ties and over/underhooks to control
+        their opponents and break their body and spirit. They tend to do well against swarmers because of their
+        ability to smother and control their opponent they tend not to fair so well against pure boxers that can adjust
+        or clinch well but also have the ability to dominate boxers if they can't adjust or maintain their rhythm.</p>
+
+        <p class="text-center font-weight-bold"><i>Popular brawlers include: Roberto Duran, Derek Chisora, Henry Armstrong</i></p>
+    </div>
+
+    <hr>
+
+    <h2>Catch-and-Shoot</h2>
+
+    <div>
+        <p>A crowd friendly style used by the likes of Dillian Whyte, where the boxer depends on his guard
+        to block and catch punches and return fire before the opponent can return to guard. Used mostly
+        by close range fighters who have little to no time to avoid or parry incoming blows.</p>
+
+        <p class="text-center font-weight-bold"><i>
+            Popular fighters that utilize this style include Evander Holyfield, Oscar Valdez, Antonio Margarito</i></p>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Counter-Puncher</h2>
+
+    <div>
+        <p>Controls the fight by timing his punches after, during, or right before his opponent throws a punch.
+        Counter punchers tend to slow the fight pace down and pot shot their opponents. There are many
+        different styles of Counter punchers and can be found in any and all stances and even different
+        styles, some counter punchers prefer to fight on the outside waiting for their opponents to come in
+        and others prefer to apply pressure and force their opponents to throw punches that they can then
+        counter.</p>
+
+        <p class="text-center font-weight-bold"><i>
+            Popular counter punchers include: Floyd Mayweather, Saul 'Canelo' Alvarez, Juan Manuel Marquez
+        </i></p>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Pressure Fighter</h2>
+
     <div class="def hidden">
-        Another crowd friendly style, used notably by George Foreman. The slugger is a boxer with 
-        tremendous power, they generally lack hand speed or the ability to throw combinations. 
-        Resigned to throwing one or two shots at a time, they break down their opponents any time 
-        they land a single shot. You can never count a slugger out; they possess the power to knock 
-        out their opponent at any time. Stylistically their weakness tend to be pure boxers who outscore and 
-        tire out the slugger, sapping their power and avoiding their best punches.
-        <div class="dboxers hidden">
+        <p>Fights on the front foot, prefers to pin his opponent to the ropes and land at will.</p>
+
+        <p class="text-center font-weight-bold"><i>
+            Popular pressure fighters include: Joe Frazier, Jack Dempsey, Shawn Porter
+        </i></p>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Pure Boxer</h2>
+
+    <div>
+        <video
+            class="vi3 kid hidden"
+            width="320"
+            height="240"
+            controls muted autoplay autobuffer>
+                <source src=".\static\boxerspug.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+
+        <div>
+            <p>The purest boxing style popularized by Muhammad Ali. The pure boxer depends on his footwork
+            and accuracy to snipe and overwhelm his opponent with clean scoring punches. While they
+            generally lack power; either due to depending on their mobility and hence, can’t properly
+            “sit down” on their punches or they developed a pure boxing style to compensate for their
+            lack of natural ability to hurt their opponents, they depend on frustrating their opponents
+            and dragging them to the finish line, forcing their opponents to expend energy by missing
+            power shots and chasing the boxer from post to post. Pure boxers are generally referred to
+            as out-fighters however some pure boxers can fight on the 'inside' or 'outside'.</p>
+
+            <p class="text-center font-weight-bold"><i>
+                Popular boxers include: Floyd Mayweather, Muhammad Ali Larry Holmes and Ricardo Lopez.
+            </i></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Slugger</h2>
+
+    <div>
+        <p>
+        Another crowd friendly style, used notably by George Foreman. The slugger is a boxer with
+        tremendous power, they generally lack hand speed or the ability to throw combinations.
+        Resigned to throwing one or two shots at a time, they break down their opponents any time
+        they land a single shot. You can never count a slugger out; they possess the power to knock
+        out their opponent at any time. Stylistically their weakness tend to be pure boxers who outscore and
+        tire out the slugger, sapping their power and avoiding their best punches.</p>
+
+        <p class="text-center font-weight-bold"><i>
             Popular sluggers include: George Foreman, Deontay Wilder, Wisaksil Wangek
-        </div>
+        </i></p>
     </div>
-<div class="term hidden" id='swarm'><h3>Swarmer</h3></div> 
+
+    <hr>
+
+    <h2 class="text-center">Swarmer</h2>
+
     <div class="def hidden">
-        A crowd friendly style of boxing where the boxer closes the distance to overwhelm his opponent 
-        with combinations. Naturally the kryptonite of pure boxers because the storm of punches disrupts 
-        their rhythm and outscores their conservative pot shotting or counterpunching style. An adage by 
-        most swarmers is to take one punch to land two or three. 
-        <div class="dboxers hidden">
+        <p>A crowd friendly style of boxing where the boxer closes the distance to overwhelm his opponent
+        with combinations. Naturally the kryptonite of pure boxers because the storm of punches disrupts
+        their rhythm and outscores their conservative pot shotting or counterpunching style. An adage by
+        most swarmers is to take one punch to land two or three.</p>
+
+        <p class="text-center font-weight-bold"><i>
             Popular swarmers include: Manny Pacquiao, Shawn Porter, Vasily Lomanchenko*
-        </div>
+        </i></p>
     </div>
-<div class="term hidden" id='sh'><h3>Switch-Hitter</h3><div>
+
+    <h2 class="text-center">Switch-Hitter</h2>
+
     <div class="def hidden">
-        A rare but dangerous boxing style, used notably by Terrence Crawford, Jaron Ennis and the late 
-        Marvelous Marvin Hagler. These boxers are dangerous in either the orthodox or Southpaw stance and 
-        generally possess power in both hands. They tend to be both ferocious and skilled in boxing on the 
-        outside or fighting on the inside, confusing and breaking down their opponents.
-            <div class="dboxers hidden">
-                Popular switch-hitters include: 'Marvelous' Marvin Hagler, Terrence 'Bud' Crawford and Jaron 'Boots' Ennis
-            </div>
+        <p>A rare but dangerous boxing style, used notably by Terrence Crawford, Jaron Ennis and the late
+        Marvelous Marvin Hagler. These boxers are dangerous in either the orthodox or Southpaw stance and
+        generally possess power in both hands. They tend to be both ferocious and skilled in boxing on the
+        outside or fighting on the inside, confusing and breaking down their opponents.</p>
+
+        <p class="text-center font-weight-bold"><i>
+            Popular switch-hitters include: 'Marvelous' Marvin Hagler, Terrence 'Bud' Crawford and Jaron 'Boots' Ennis</i></p>
     </div>
 </div>
+
 {% endblock %}

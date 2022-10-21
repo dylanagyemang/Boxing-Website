@@ -15,9 +15,7 @@ function toggleNav() {
     var arr = document.getElementById("arr");
     var tog = document.getElementById("toggler");
     var dud = document.getElementById("dudley");
-    var side= document.getElementById("sidebar");
     nav.classList.toggle("hide");
-    side.classList.toggle("hidden");
     content.classList.toggle("exp");
     head.classList.toggle("exp");
     arr.classList.toggle("adjustarrow");
