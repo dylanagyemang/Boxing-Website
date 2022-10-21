@@ -1,0 +1,26 @@
+#subnav{
+    /*
+    display:grid !important;
+    text-align: left !important;
+    background-color: #e6b869 !important;
+    text-transform: uppercase !important;
+    height: 100% !important; /* 100% Full-height * /
+    width: 14rem; /* 0 width - change this with JavaScript * /
+    position: fixed !important; /* Stay in place * /
+    z-index: 1 !important; /* Stay on top * /
+    top: 0 !important; /* Stay at the top * /
+    right: 0 !important;
+    overflow-x: hidden !important; /* Disable horizontal scroll * /
+    padding-top: 0px !important; /* Place content 60px from the top * /
+    padding-bottom: 0px !important;
+    transition: .75s;*/
+
+    position: absolute;
+    right: 0px;
+    /*height: 2000px;*/
+    color: yellow;
+    width: 300px;
+    z-index: 9001;
+    background-color: yellow;
+    top: 4rem;
+}
