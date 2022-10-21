@@ -37,3 +37,9 @@ def movement():
 @views.route('/quiz')
 def boxers():
     return render_template("quiz.html")
+
+
+@views.route('/favicon.ico')
+def favicon():
+    return render_template("favicon.ico")
+
