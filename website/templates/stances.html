@@ -1,17 +1,42 @@
-{% extends "base.html" %} {% block title %}Stances{% endblock %} {% block h1 %}The Pugilist's Stance{% endblock %}
+{% extends "base.html" %} {% block title %}Stances{% endblock %}
 {% block content %} 
-<div class="term"><h3>Conventional Guard</h3></div>
-    <div class="def">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-right" id="subnav" role='navigation'>
+    <button class="toggler closebtn" id="toggler" type="button" onclick='toggleNav()'>
+        <span>
+            <img class="manImg" src="./static/caret-right.svg"></img>
+        </span>
+    </button>
+    <div class="navbar-collapse sidebar" id="navbar">
+        <div class="navbar-nav collapse show" id="sidebar">
+            <ul>
+                <li><a class="nav-item nav-link" href="#cg">Conventional Guard</a></li>
+                <li><a class="nav-item nav-link" href="#xg">Cross Guard</a></li>
+                <li><a class="nav-item nav-link" href="#hg">High Guard</a></li>
+                <li><a class="nav-item nav-link" href="#lgg">Long Guard</a></li>
+                <li><a class="nav-item nav-link" href="#lg">Low Guard</a></li>
+                <li><a class="nav-item nav-link" href="#pab">Peek-a-boo/Tight Defense</a></li>
+                <li><a class="nav-item nav-link" href="#ps">Philly Shell</a></li>
+                <li><a class="nav-item nav-link" href="#sp">Southpaw</a></li>
+            </ul>
+        </div>
+    </div>
+</nav> 
+<div><a class="tarrow" id="arr" href="#top"><img class="ars" src=".\static\arrow-bar-up.svg"></a></div>
+<div class="cont" id="cont">
+    <h1 class="hidden" id="hed">The Pugilist's Stance</h1>
+<div class="term hidden" id="cg"><h3>Conventional Guard</h3></div>
+    <div class="def hidden">
         The most popular stance used in the modern era of boxing,  the boxer is oriented more square 
         than a fighter in the shell but more bladed than a fighter in a peek-a-boo or high guard. Their 
         hands are oriented by their chin or cheeks and often transition between a long guard or high 
         guard. This stance is well rounded for defense or offense and can be used at any range.
-        <div class="dboxers">
+        <div class="dboxers hidden">
             Popular boxers in this stance include: Keith Thurman, Terrence Crawford, Jermall Charlo
         </div>
     </div>
-<div class="term"><h3>Cross-Guard/Crab Guard</h3></div>
-    <div class="def">
+<div class="term hidden" id="xg"><h3>Cross Guard/Crab Guard</h3></div>
+    <div class="def kid hidden">
         A rarely used stance where the boxer has both arms crossed, their right hand generally by their 
         left ear, elbow/forearm facing their opponent and their left hand by their liver and their 
         elbow/forearm is also facing their opponent. It’s a very safe stance where the only opening is 
@@ -22,41 +47,41 @@
         counter/pot shot or wrap your opponent up. Forearms and elbows are used liberally to frame the 
         opponent’s head/chin and smother their offense by breaking their stance and giving them little 
         room to work. 
-        <div class="dboxers">
+        <div class="dboxers kid hidden">
             Popular boxers in this stance include: Archie Moore, Ken Norton, Evander Holyfield, Henry Armstrong
         </div>
     </div>
-<div class="term"><h3>High Guard/Double Guard</h3></div>
-    <div class="def">
+<div class="term hidden" id="hg"><h3>High Guard/Double Guard</h3></div>
+    <div class="def kid hidden">
         A popular boxing stance that is generally most effective at mid to close range. Perfect for the 
         Catch-and-shoot style of boxing where the boxer catches punches on his guard and fires his own 
         punch in return. This stance is mostly used by Mexican fighters who are known for their 
         aggression and propensity to fight on the inside, catching and trading punches till one fighter 
         drops.
-        <div class="dboxers">
+        <div class="dboxers kid hidden">
             Popular boxers in this stance include: Adrien Broner, Gervonta Tank Davis and Saul Canelo Alvarez.
         </div>
     </div>
-<div class="term"><h3>Long-Guard/Half-Guard</h3></div>
-    <div class="def">
+<div class="term hidden" id="lgg"><h3>Long-Guard/Half-Guard</h3></div>
+    <div class="def kid hidden">
         The long guard is a stance where the rear hand is held high by the temple and the lead hand is 
         held up and out to provide traffic for incoming punches. The lead elbow can be used to deflect 
         and block punches as well, an excellent guard for long rangy fighters.
-            <div class"dboxers">
+            <div class"dboxers kid hidden">
                 Popular boxers in this stance include: Larry Holmes, Wladimir Klitschko, Lennox Lewis, Anthony Joshua
             </div>
     </div>
-<div class="term"><h3>Low-Guard</h3></div> 
-    <div class="def">
+<div class="term hidden" id="lg"><h3>Low-Guard</h3></div> 
+    <div class="def kid hidden">
         Like the name implies, the boxer keeps both hands in a low position. Allows for easier upper 
         body mobility to sway, pull and slip punches as well as counter their opponent from a low angle. 
         The stance inherently works as a way to bait punches and confuse your opponent. 
-            <div class="dboxers">
+            <div class="dboxers kid hidden">
                 Popular boxers in this stance include: Roy Jones Jr., Prince Naseem Hamed, Pernell Whittaker
             </div>
     </div>
-<div class="term"><h3>Peek-a-boo/Tight Defense</h3></div>
-    <div class="def">
+<div class="term hidden" id="pab"><h3>Peek-a-boo/Tight Defense</h3></div>
+    <div class="def kid hidden">
         Contrary to popular belief the peek-a-boo defense is a stance, not a style. Both hands are 
         held tightly in front of the opponent's face and his torso is oriented in a squared position 
         to his opponent. Popularized by Cus D'amato and his protégés Floyd Patterson and  Mike Tyson, 
@@ -66,27 +91,27 @@
         namely, Ike Quartey and Jose Torres, where the squared torso allows for more powerful jabs and 
         provides strong defense in mid to long range because it doesn’t allow straight punches to split 
         the guard.
-            <div class="dboxers"> 
+            <div class="dboxers kid hidden"> 
                 Popular boxers in this stance include: Mike Tyson, Floyd Patterson, Ike Quartey
             </div>
     </div>
-<div class="term"><h3>Philly Shell/Detroit Shell/Stonewall Defense</h3></div>
-    <div class="def">
+<div class="term hidden" id="ps"><h3>Philly Shell/Detroit Shell/Stonewall Defense</h3></div>
+    <div class="def kid hidden">
         Variation of Cross-Guard developed in Detroit, Michigan. Popularized by Floyd Mayweather, 
         it’s generally used by counter punchers effective in close and mid/long range. Lead hand is 
         held low and across the belly, lead shoulder is the first line of defense protecting the chin 
         and used to roll straights/crosses. Rear hand can be held high or lower by the jaw, used to 
         parry and catch jabs/hooks. Torso is generally oriented in a bladed stance but can be squared 
         toward the opponent.
-        <div class="dboxers">
+        <div class="dboxers kid hidden">
             Popular boxers in this stance include: George Benton, Floyd Mayweather, Ken Norton
         </div>
     </div>
-<div class="term"><h3>Southpaw</h3></div> 
-    <div class="def">
+<div class="term hidden" id="sp"><h3>Southpaw</h3></div> 
+    <div class="def kid hidden">
         The mirror image of most right-handed fighters, southpaws have an innate advantage due to how 
         rare they are and often find success in frustrating and outmaneuvering their opponents. 
-        <div class="dboxers">
+        <div class="dboxers kid hidden">
             Popular boxers in this stance include: 'Winky' Wright, Vasily Lomanchenko and Terrence Crawford*
         </div>
     </div>

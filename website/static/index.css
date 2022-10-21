@@ -2,7 +2,7 @@
 
 h1{
     margin-top: 3rem !important;
-    margin-right: 10rem;
+    margin-right: 0rem;
     transition: .75s;
 }
 .term{
@@ -32,29 +32,11 @@ div{
     transition: all 1s;
     transform: translateX(-100%);
 }
-.hiddeny{
-    opacity: 0;
-    filter: blur(5px);
-    transition: all 1s;
-    transform: translateY(-100%);
-}
-.hiddenu{
-    opacity: 0;
-    filter: blur(5px);
-    transition: all 1s;
-    transform: translateY(100%);
-}
-.hiddenz{
-    opacity: 0;
-    filter: blur(5px);
-    transition: all 1s;
-    transform: translateX(100%);
-}
+
 .show{
     opacity:1;
     filter: blur(0);
     transform: translateX(0);
-    transform: translateY(0);
 }
 
 @media(prefers-reduced-motion) {
@@ -85,6 +67,7 @@ div{
     padding-top: 0px !important; /* Place content 60px from the top */
     padding-bottom: 0px !important;
     transition: .75s;
+    border-left: .1rem solid aliceblue;
 }
 .toggler{
     display:grid !important;
@@ -109,6 +92,9 @@ div{
     outline: none !important;
     border: none !important;
 }
+.closebtn a:hover{
+    color: #ffbb33;
+}
 .tcolor{
     right: 0rem;
     transition: .5s;
@@ -122,7 +108,7 @@ div{
     width: 4rem !important; /* 0 width - change this with JavaScript */
     position: fixed !important; /* Stay in place */
     z-index: 1 !important; /* Stay on top */
-    bottom: 0rem !important; /* Stay at the top */
+    bottom: 0rem !important;
     right: 0rem;
     padding-top: 0px !important; /* Place content 60px from the top */
     padding-bottom: 0px !important;
@@ -144,6 +130,7 @@ div{
     margin-right: 10rem;
     transition: .75s;
     padding: 20px;
+    min-height: calc(100vh);
 }
 body{
     background-color: black;
@@ -169,13 +156,30 @@ hr {
     margin: 1em 0; 
     padding: 0; 
 }
-
-footer {
-        background-color:  #dc3545!important;
-        padding: 40px;
-        min-height: 100px;
+#disc{
+    height: 29px;
+    width: 106px;
+    border: none;
 }
-
+#disc img{
+    height: 28px;
+    width: 105px;
+    border: .125rem groove aliceblue ;
+    border-radius: .25rem;
+}
+footer {
+    background-color:  #f00820 !important;
+    margin-bottom: 0rem;
+    left: -1;
+    bottom: 0;
+    min-height: 85px;
+    width: 100% !important;
+    
+}
+footer a:hover{
+    background-color: #e6b869;
+    border: .1rem solid aliceblue;
+}
 .kid:nth-child(2){
     transition-delay: 600ms;
 }
