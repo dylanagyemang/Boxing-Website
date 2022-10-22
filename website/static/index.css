@@ -173,8 +173,19 @@ footer {
     left: -1;
     bottom: 0;
     min-height: 85px;
-    width: 100% !important;
-    
+    width: 100% !important;  
+}
+.flash{
+    position: sticky !important;
+    top: 0;
+    right: -1rem;
+}
+.alert{
+    display: inline-flex;
+    width: 100vw;
+    left: -1;
+    align-content: right !important;
+    height: 2rem !important;
 }
 footer a:hover{
     background-color: #e6b869;

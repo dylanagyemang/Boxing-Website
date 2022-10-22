@@ -1,5 +1,7 @@
-{% extends "base.html" %} {% block title %}Login{% endblock %} {% block h1 %}Login{% endblock %}
+{% extends "base.html" %} {% block title %}Login{% endblock %}
 {% block content%}
+<h1>Login</h1>
+<div class="cont exp" id="cont">
 <form method ='POST'>
     <div class='form-group'>
         <label for="email">Email Address</label>
@@ -21,4 +23,5 @@
     </div>
     <button type='submit' class='btn btn-danger btn-lg'>Login</button>
 </form>
+</div>
 {% endblock %}
