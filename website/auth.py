@@ -15,6 +15,7 @@ def login():
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
+                return render_template("home.html")
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
@@ -35,8 +36,12 @@ def signup():
         password2 = request.form.get('password2')
         
         user = User.query.filter_by(email=email).first()
+        username = User.query.filter_by(first_name=first_name).first()
+        
         if user:
             flash('Email already exists!', category='error')
+        if username:
+            flash('Username already exists!', category='error')
         if len(email) < 4:
             flash('Email should have more than 3 characters.', category='error')
         elif len(first_name)< 2:

@@ -84,6 +84,11 @@ div{
     border: 0.1rem solid transparent;
     transition: 1s;
 }
+.closebtn span:hover{
+    border-radius: .3rem;
+    background-color: #f00820;
+    border: .1rem solid aliceblue;
+}
 .manImg{
     height: 2rem; 
     width: 2rem;
@@ -92,14 +97,15 @@ div{
     outline: none !important;
     border: none !important;
 }
-.closebtn a:hover{
-    color: #ffbb33;
+.tcolor span{
+    border: .1rem solid aliceblue !important;
+    border-radius: .3rem;
+    background-color: #e6b869;
 }
 .tcolor{
-    right: 0rem;
+    right: 2rem;
     transition: .5s;
     transform: rotate(180deg);
-    filter: invert(0%) !important;
 }
 .tarrow{
     display:grid !important;
@@ -130,7 +136,9 @@ div{
     margin-right: 10rem;
     transition: .75s;
     padding: 20px;
-    min-height: calc(100vh);
+}
+.container{
+    min-height: 80vh;
 }
 body{
     background-color: black;
@@ -182,7 +190,7 @@ footer {
 }
 .alert{
     display: inline-flex;
-    width: 100vw;
+    width: 90vw;
     left: -1;
     align-content: right !important;
     height: 2rem !important;
