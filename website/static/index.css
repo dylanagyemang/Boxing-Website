@@ -88,6 +88,7 @@ div{
     border-radius: .3rem;
     background-color: #f00820;
     border: .1rem solid aliceblue;
+    transition: .25s;
 }
 .manImg{
     height: 2rem; 
@@ -101,11 +102,13 @@ div{
     border: .1rem solid aliceblue !important;
     border-radius: .3rem;
     background-color: #e6b869;
+    transition: .5s;
 }
 .tcolor{
     right: 2rem;
     transition: .5s;
     transform: rotate(180deg);
+    z-index: 1 !important;
 }
 .tarrow{
     display:grid !important;
@@ -125,8 +128,13 @@ div{
     width: 4rem;
 }
 .adjustarrow{
-    right:2rem !important;
+    right:2.2rem !important;
     transition: .75s;
+}
+.adjustarrow :hover{
+    background-color: #e6b869;
+    border: .05rem solid aliceblue;
+    transition: 1s;
 }
 .exp{
     transition: .75s;
@@ -224,4 +232,5 @@ footer a:hover{
 a:hover{
     background-color:#3d9943;
     border: 0.05rem solid #f00820;
+    transition: .5s;
 }
