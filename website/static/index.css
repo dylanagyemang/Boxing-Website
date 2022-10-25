@@ -84,6 +84,12 @@ div{
     border: 0.1rem solid transparent;
     transition: 1s;
 }
+.closebtn span:hover{
+    border-radius: .3rem;
+    background-color: #f00820;
+    border: .1rem solid aliceblue;
+    transition: .25s;
+}
 .manImg{
     height: 2rem; 
     width: 2rem;
@@ -92,14 +98,17 @@ div{
     outline: none !important;
     border: none !important;
 }
-.closebtn a:hover{
-    color: #ffbb33;
+.tcolor span{
+    border: .1rem solid aliceblue !important;
+    border-radius: .3rem;
+    background-color: #e6b869;
+    transition: .5s;
 }
 .tcolor{
-    right: 0rem;
+    right: 2rem;
     transition: .5s;
     transform: rotate(180deg);
-    filter: invert(0%) !important;
+    z-index: 1 !important;
 }
 .tarrow{
     display:grid !important;
@@ -119,8 +128,13 @@ div{
     width: 4rem;
 }
 .adjustarrow{
-    right:2rem !important;
+    right:2.2rem !important;
     transition: .75s;
+}
+.adjustarrow :hover{
+    background-color: #e6b869;
+    border: .05rem solid aliceblue;
+    transition: 1s;
 }
 .exp{
     transition: .75s;
@@ -130,7 +144,9 @@ div{
     margin-right: 10rem;
     transition: .75s;
     padding: 20px;
-    min-height: calc(100vh);
+}
+.container{
+    min-height: 80vh;
 }
 body{
     background-color: black;
@@ -173,8 +189,19 @@ footer {
     left: -1;
     bottom: 0;
     min-height: 85px;
-    width: 100% !important;
-    
+    width: 100% !important;  
+}
+.flash{
+    position: sticky !important;
+    top: 0;
+    right: -1rem;
+}
+.alert{
+    display: inline-flex;
+    width: 90vw;
+    left: -1;
+    align-content: right !important;
+    height: 2rem !important;
 }
 footer a:hover{
     background-color: #e6b869;
@@ -205,4 +232,5 @@ footer a:hover{
 a:hover{
     background-color:#3d9943;
     border: 0.05rem solid #f00820;
+    transition: .5s;
 }

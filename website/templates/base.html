@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon.ico">
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link
@@ -40,7 +41,7 @@
                 </div>
             </div>
         </nav>
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        <div class="flash">{% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
                 {% if category == 'error' %}
@@ -60,7 +61,7 @@
                 {% endif %}
                 {% endfor %}
             {% endif %}
-        {% endwith %}
+        {% endwith %}</div>
         <div class="container">
             {% block content %}
             {% endblock %}
@@ -90,7 +91,7 @@
     </body>
     <br>
     {% block footer %}
-    <footer align="center" id="footer">
+    <footer align="center" id="foot">
         <p><strong>Author: Dylan Agyemang</strong><br>
         <a href="mailto:dagyeman12@gmail.com">dagyeman12@gmail.com</a><br>
         <a href="https://discord.gg/jtBUvZaDH2" id="disc" target="_blank" rel="noopener noreferrer">
