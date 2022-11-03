@@ -234,3 +234,36 @@ a:hover{
     border: 0.05rem solid #f00820;
     transition: .5s;
 }
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+  .effect:hover .overlay {
+    opacity: 1;
+  }
+.col-sm-12{
+    border: .1rem solid white; 
+    max-width: 33vw !important;
+    padding: 2rem;
+}
+.col-sm-12 div{
+    align-items: start;
+}
+.home{
+    align-content: start;
+}
+figcaption{
+    border: .1rem solid white;
+    align-content: center;
+    margin: 0;
+    margin-left: 0;
+}
