@@ -12,6 +12,9 @@ h1{
 .wholeterm{
     display: inline-flex !important;
 }
+.wholeterm .def{
+    padding-left: 10px;
+}
 video{
     margin-right: 1rem;
 }
