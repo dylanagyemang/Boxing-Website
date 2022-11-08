@@ -14,12 +14,14 @@ function toggleNav() {
     var head = document.getElementById("hed");
     var arr = document.getElementById("arr");
     var tog = document.getElementById("toggler");
+    //var home = document.getElementById("col-sm-12");
     //var foot = document.getElementById("foot");
     nav.classList.toggle("hide");
     content.classList.toggle("exp");
     head.classList.toggle("exp");
     arr.classList.toggle("adjustarrow");
     tog.classList.toggle("tcolor");
+    //home.classList.toggle("exp");
     //foot.classList.toggle("exp");
   }
 

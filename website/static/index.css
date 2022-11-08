@@ -12,6 +12,9 @@ h1{
 .wholeterm{
     display: inline-flex !important;
 }
+.wholeterm .def{
+    padding-left: 10px;
+}
 video{
     margin-right: 1rem;
 }
@@ -238,7 +241,33 @@ a:hover{
     position: absolute;
     bottom: 0;
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    background: rgba(24, 146, 55, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+  .overlay1 {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(162, 172, 21, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+  .overlay2 {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(243, 16, 16, 0.7); /* see-through */
     color: #f1f1f1;
     width: 100%;
     transition: .5s ease;
@@ -250,24 +279,61 @@ a:hover{
   .effect:hover .overlay {
     opacity: 1;
   }
+  .effect:hover .overlay1 {
+    opacity: 1;
+  }
+  .effect:hover .overlay2 {
+    opacity: 1;
+  }
 .col-sm-12{
     border: .1rem solid white; 
     max-width: 33vw !important;
+    max-height: 33vw !important;
     padding: 2rem;
 }
 .col-sm-12 div{
     align-items: center !important;
 }
+figure img{
+    max-width: 33vw !important;
+    max-height: 33vw !important;
+}
 .home{
     margin-left: 5vw;
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,30vw));*/
 }
+
+
+figure a:hover{
+    border: none;
+}
+
 figcaption{
-    border: .1rem solid white;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: .1rem solid white;
     height: 100%;
+    min-width: 100%;
+    align-items: center !important;
 }
-figure figcaption{
-    margin-left: -3rem;
+.col-sm-12{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right:.5rem;
 }
-figure a{
-    text-decoration: saddlebrown !important;
+figure h3{
+    margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
