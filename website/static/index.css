@@ -279,6 +279,17 @@ a:hover{
   .effect:hover .overlay {
     opacity: 1;
   }
+  figcaption p{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all .3s;
+    transform: translateX(100%);
+  }
+  .effect:hover figcaption p{
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+}
   .effect:hover .overlay1 {
     opacity: 1;
   }
@@ -303,8 +314,14 @@ figure img{
     /*display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,30vw));*/
 }
-
-
+.row{
+    align-content: center;
+    transition: .75s;
+}
+.expe{
+    margin-left: 0;
+    transition: .75s;
+}
 figure a:hover{
     border: none;
 }
@@ -320,6 +337,7 @@ figcaption{
     height: 100%;
     min-width: 100%;
     align-items: center !important;
+    transition: .25s;
 }
 .col-sm-12{
     margin-top: 1rem;
