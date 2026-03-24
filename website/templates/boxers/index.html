@@ -3,7 +3,12 @@
 
 {% block content %}
 <div class="cont exp" id="cont">
-  <h1 class="hidden exp" id="hed">Boxer Database</h1>
+
+  <!-- Hero banner -->
+  <div class="boxer-hero">
+    <h1>Boxer Database</h1>
+    <hr>
+  </div>
 
   <!-- Search -->
   <div class="row mb-3">
@@ -21,7 +26,7 @@
     </div>
   </div>
 
-  <!-- Filters -->
+  <!-- Filters — dropdowns -->
   <form method="GET" action="/boxers" class="row mb-4">
     <div class="boxer-filter-col col-sm-5 mb-2">
       <select name="weight_class" class="form-control bg-dark text-light border-secondary">
@@ -48,7 +53,7 @@
   {% if boxers.items %}
   <div class="row boxer-grid">
     {% for boxer in boxers.items %}
-    <div class="boxer-col col-12 col-md-6 col-lg-4 mb-4">
+    <div class="boxer-col col-12 col-sm-6 col-lg-3 mb-4">
       <a href="/boxers/{{ boxer.id }}" class="text-decoration-none">
         <div class="card boxer-card h-100">
           {% if boxer.image_url %}
@@ -59,20 +64,19 @@
           </div>
           {% endif %}
           <div class="card-body boxer-card-body">
-            <h5 class="card-title mb-1">{{ boxer.name }}</h5>
+            <div class="boxer-card-name mb-1">{{ boxer.name }}</div>
             {% if boxer.nickname %}
-            <p class="text-muted mb-2 small">"{{ boxer.nickname }}"</p>
+            <p class="text-muted mb-2 small" style="font-style:italic;">"{{ boxer.nickname }}"</p>
             {% endif %}
+            {% if boxer.weight_class %}
             <p class="mb-1">
-              <span class="badge badge-danger">{{ boxer.weight_class or 'Unknown' }}</span>
-              {% if boxer.nationality %}
-              <span class="badge badge-secondary ml-1">{{ boxer.nationality }}</span>
-              {% endif %}
+              <span class="pill-filter" style="pointer-events:none; font-size:0.72rem; padding:0.1rem 0.6rem;">{{ boxer.weight_class }}</span>
             </p>
-            <p class="mb-0 boxer-record">
-              {{ boxer.record_wins }}-{{ boxer.record_losses }}-{{ boxer.record_draws }}
-              <small class="text-muted">&nbsp;({{ boxer.wins_by_ko }} KO)</small>
-            </p>
+            {% endif %}
+            <div class="boxer-record-badge">
+              {{ boxer.record_wins }}W – {{ boxer.record_losses }}L – {{ boxer.record_draws }}D
+              &nbsp;·&nbsp; {{ boxer.wins_by_ko }} KO
+            </div>
           </div>
         </div>
       </a>

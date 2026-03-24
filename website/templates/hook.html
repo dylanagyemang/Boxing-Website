@@ -27,8 +27,11 @@
     </div>
 </nav>
 <div class="cont" id="cont">
-<h1 class="hidden" id="hed">The Hook - 3/4</h1>
-<div><a class="tarrow" id="arr" href="#top"><img class="ars" src=".\static\arrow-bar-up.svg"></a></div>
+<div><a class="tarrow" id="arr" href="#top"><img class="ars" src="{{ url_for('static', filename='arrow-bar-up.svg') }}" alt="back to top"></a></div>
+<div class="page-hero">
+    <h1 id="hed">The Hook</h1>
+    <hr>
+</div>
 <div class="term hidden" id="lead"><h3>The Lead Hook - 3 </h3></div>
     <div class="def hidden">
         The lead hook is an excellent weapon, thrown with the lead hand around the guard in a tight arc or a 
