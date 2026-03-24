@@ -1,7 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
-        <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon.ico') }}">
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link
@@ -10,13 +10,12 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
             crossorigin="anonymous"
         />
-        
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
             crossorigin="anonymous"
         />
-        <link href="./static/index.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
         <title>{% block title %}The Pugilist's Encyclopedia{% endblock %}</title>
     </head>
     <body class="p-3 m-0 border-0 bd-example">
@@ -26,13 +25,16 @@
             </button>
             <div class="navbar-collapse" id="navbar">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                    <a class="nav-item nav-link" id="signup" href="/signup">Signup</a>
-                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    {% if current_user.is_authenticated %}
+                        <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    {% else %}
+                        <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                        <a class="nav-item nav-link" id="signup" href="/signup">Signup</a>
+                    {% endif %}
                     <a class="nav-item nav-link" id="home" href="/">Home</a>
-                    <a class="nav-item nav-link" id="styles" href="/styles">Styles</a> 
-                    <a class="nav-item nav-link" id="stances" href="/stances">Stances</a> 
-                    <a class="nav-item nav-link" id="jab" href="/jab">The Jab</a> 
+                    <a class="nav-item nav-link" id="styles" href="/styles">Styles</a>
+                    <a class="nav-item nav-link" id="stances" href="/stances">Stances</a>
+                    <a class="nav-item nav-link" id="jab" href="/jab">The Jab</a>
                     <a class="nav-item nav-link" id="cross" href="/cross">The Straight/Cross</a>
                     <a class="nav-item nav-link" id="hook" href="/hook">The Hook</a>
                     <a class="nav-item nav-link" id="uppercuts" href="/uppercut">The Uppercut</a>
@@ -45,14 +47,14 @@
             {% if messages %}
                 {% for category, message in messages %}
                 {% if category == 'error' %}
-                <div class="alert alert-warning alter-dismissable fade show" role="alert">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type='button' class="close" data-dismiss='alert'>
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 {% else %}
-                <div class="alert alert-info alter-dismissable fade show" role="alert">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type='button' class="close" data-dismiss='alert'>
                         <span aria-hidden="true">&times;</span>
@@ -66,10 +68,10 @@
             {% block content %}
             {% endblock %}
         </div>
-                
+
         <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"
         ></script>
         <script
@@ -82,12 +84,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
-
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='index.js') }}"
-        ></script>
-        <script defer src='./static/scroll.js'></script>
+        <script defer src="{{ url_for('static', filename='scroll.js') }}"></script>
     </body>
     <br>
     {% block footer %}
@@ -95,7 +92,7 @@
         <p><strong>Author: Dylan Agyemang</strong><br>
         <a href="mailto:dagyeman12@gmail.com">dagyeman12@gmail.com</a><br>
         <a href="https://discord.gg/jtBUvZaDH2" id="disc" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/-Discord-%237289d9?style=for-the-badge&logo=discord&logoColor=white">
+            <img src="https://img.shields.io/badge/-Discord-%237289d9?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
         </a></p>
     </footer>{% endblock %}
 </html>
