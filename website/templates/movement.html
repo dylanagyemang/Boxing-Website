@@ -1,9 +1,173 @@
 {% extends "base.html" %} {% block title %}Movement and Angles{% endblock %}
 {% block content %}
-<div class="cont exp" id="cont">
-    <h1 class="hidden exp" id="hed">Movement and Angles</h1>
-    <div class="alert alert-warning" role="alert">
-        This section is coming soon. Check back later!
+
+<nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-right" id="subnav" role='navigation'>
+    <button class="toggler closebtn" id="toggler" type="button" onclick='toggleNav()'>
+        <span>
+            <img class="manImg" src="{{ url_for('static', filename='caret-right.svg') }}"></img>
+        </span>
+    </button>
+    <div class="navbar-collapse sidebar" id="navbar">
+        <div class="navbar-nav collapse show" id="sidebar">
+            <ul>
+                <li><a class="nav-item nav-link" href="#footwork">Footwork Fundamentals</a></li>
+                <li><a class="nav-item nav-link" href="#defensive">Defensive Movement</a></li>
+                <li><a class="nav-item nav-link" href="#offensive">Offensive Movement</a></li>
+                <li><a class="nav-item nav-link" href="#angles">Angles</a></li>
+                <li><a class="nav-item nav-link" href="#generalship">Ring Generalship</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
+<div><a class="tarrow" id="arr" href="#top"><img class="ars" src="{{ url_for('static', filename='arrow-bar-up.svg') }}" alt="back to top"></a></div>
+<div class="cont" id="cont">
+<div class="page-hero">
+    <h1 id="hed">Movement and Angles</h1>
+    <hr>
+</div>
+
+<!-- ── FOOTWORK FUNDAMENTALS ─────────────────────────────────────── -->
+<h2 class="section-heading hidden" id="footwork">Footwork Fundamentals</h2>
+
+<div class="term hidden" id="step-drag"><h3>Step and Drag</h3></div>
+<div class="def kid hidden">
+    The standard method of movement in boxing, where the lead foot steps first and the rear foot drags to follow, preserving stance width and balance at all times. The key rule is never to cross the feet — doing so collapses the base and removes punching power. This simple discipline underpins every other form of footwork, keeping the boxer square, grounded, and always ready to punch or defend. Mastery of the step and drag is the foundation all other movement is built upon.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Sugar Ray Leonard, Vasyl Lomachenko, Pernell Whitaker
+    </div>
+</div>
+
+<div class="term hidden" id="pendulum"><h3>Pendulum Step</h3></div>
+<div class="def kid hidden">
+    A rhythmic back-and-forth weight shift that allows a boxer to rapidly create and close distance without fully committing to a directional step. By rocking the weight between the lead and rear foot, the boxer becomes unpredictable — opponents struggle to time their punches against a constantly shifting target. The pendulum step is particularly effective for counters, drawing an opponent in and then immediately closing to throw. It requires excellent balance and relaxation in the lower body.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Muhammad Ali, Roy Jones Jr., Naseem Hamed
+    </div>
+</div>
+
+<div class="term hidden" id="pivot"><h3>The Pivot</h3></div>
+<div class="def kid hidden">
+    Rotating on the ball of the lead foot to reposition at an angle to the opponent without retreating. The pivot lets a boxer escape the attack line, create new angles of attack, and set up counters all in one motion. It is most effective at close range when the opponent expects the boxer to clinch or back away — pivoting instead puts the opponent out of position and facing the wrong direction. Lomachenko's prolific use of the pivot has made it synonymous with elite-level ring generalship.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Vasyl Lomachenko, Willie Pep, Floyd Mayweather Jr.
+    </div>
+</div>
+
+<!-- ── DEFENSIVE MOVEMENT ─────────────────────────────────────────── -->
+<h2 class="section-heading hidden" id="defensive">Defensive Movement</h2>
+
+<div class="term hidden" id="slipping"><h3>Slipping</h3></div>
+<div class="def kid hidden">
+    Moving the head off the centerline to avoid an incoming punch by rotating the torso and bending slightly at the knees rather than stepping away. Slipping to the inside of a straight punch puts the boxer in an ideal position to counter the body; slipping to the outside removes them from the opponent's other hand. It is an active form of defense — the boxer stays within range and is immediately loaded to return fire. Proper slipping requires reading the punch early and committing before impact.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Muhammad Ali, Pernell Whitaker, Canelo Álvarez
+    </div>
+</div>
+
+<div class="term hidden" id="bob-weave"><h3>Bobbing and Weaving</h3></div>
+<div class="def kid hidden">
+    A defensive technique where the boxer bends at the knees and rolls the upper body in a U-shaped motion under or around incoming hooks and overhands. Unlike slipping, which evades straight punches, bobbing and weaving is designed to navigate around wide, arcing shots. The technique simultaneously loads the legs for an explosive counter as the boxer rises out of the weave — the power of the return punch is generated by the upward leg drive. It is most effective for shorter fighters who prefer to fight on the inside.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Joe Frazier, Mike Tyson, Julio César Chávez
+    </div>
+</div>
+
+<div class="term hidden" id="pullback"><h3>The Pull Back / Lean Back</h3></div>
+<div class="def kid hidden">
+    Shifting the weight to the rear foot to move the head just out of range of an incoming punch while keeping both feet planted. Because the feet do not move, the boxer is in an optimal position to explode forward with an immediate counter the moment the opponent's punch falls short. It is a particularly deceptive technique — the opponent believes they are in range, throws, misses, and is then hit while mid-extension. The risk is overusing it, as a skilled opponent will adjust their range.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Roy Jones Jr., Floyd Mayweather Jr., Archie Moore
+    </div>
+</div>
+
+<div class="term hidden" id="shoulder-roll"><h3>The Shoulder Roll</h3></div>
+<div class="def kid hidden">
+    A defensive technique using the lead shoulder to deflect incoming punches by rotating into them, redirecting the force away from the chin and absorbing impact on the thick muscle of the shoulder. The rear hand is kept high and close to the jaw to catch anything the shoulder misses. The shoulder roll works best against straight punches and jabs, making it a natural complement to the Philly Shell stance. It demands precise timing and an intimate understanding of an opponent's attack patterns to execute safely.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Floyd Mayweather Jr., James Toney, Winky Wright
+    </div>
+</div>
+
+<!-- ── OFFENSIVE MOVEMENT ─────────────────────────────────────────── -->
+<h2 class="section-heading hidden" id="offensive">Offensive Movement</h2>
+
+<div class="term hidden" id="cutoff"><h3>Cutting Off the Ring</h3></div>
+<div class="def kid hidden">
+    Moving diagonally rather than straight forward to reduce the opponent's available space, herding them toward the ropes or corners where their movement options are eliminated. A boxer who moves straight forward is easy to circle around; one who cuts angles with footwork makes the ring feel progressively smaller for the retreating fighter. Effective ring cutting requires anticipating where the opponent will move next and arriving there first. It is one of the defining skills that separates a pressure fighter from a simple aggressor.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Joe Frazier, Mike Tyson, Manny Pacquiao
+    </div>
+</div>
+
+<div class="term hidden" id="advancing-jab"><h3>Advancing Behind the Jab</h3></div>
+<div class="def kid hidden">
+    Using the jab simultaneously as a rangefinder, a shield, and a weapon while stepping forward, allowing the boxer to control distance and dictate the pace of the entire fight. A well-timed jab stops the opponent's forward progress, keeps them occupied defensively, and sets up the power shots that follow. The boxer who controls the jab controls the space between the two fighters. This approach is especially effective for tall, long-armed heavyweights who can maintain their range advantage while pressuring their opponent backward.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Larry Holmes, Lennox Lewis, Wladimir Klitschko
+    </div>
+</div>
+
+<div class="term hidden" id="check-step"><h3>The Check Step / Exit Angle</h3></div>
+<div class="def kid hidden">
+    A 45-degree lateral step taken off the attack line immediately after throwing punches, moving the boxer out of the opponent's return fire range and resetting at a new angle. Rather than standing in front of the opponent after a combination, the boxer exits to the side, making it nearly impossible to be countered cleanly. It turns attack into a cycle — punch, exit, reset, punch again from a new position. Combined with the pivot, the check step is a cornerstone of elusive, angle-based boxing.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Vasyl Lomachenko, Pernell Whitaker, Willie Pep
+    </div>
+</div>
+
+<!-- ── ANGLES ─────────────────────────────────────────────────────── -->
+<h2 class="section-heading hidden" id="angles">Angles</h2>
+
+<div class="term hidden" id="45-angle"><h3>The 45-Degree Angle</h3></div>
+<div class="def kid hidden">
+    The most fundamental offensive angle in boxing — stepping to a 45-degree position outside the opponent's lead foot simultaneously exposes their body and chin while removing the boxer from the opponent's power line. From this angle, the opponent cannot easily target the boxer with their rear hand, and their own flank is open. It is the angle Lomachenko exploits more consistently and creatively than almost anyone in boxing history, combining it with rapid directional changes to leave opponents unable to track his position.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Vasyl Lomachenko, Sugar Ray Leonard, Pernell Whitaker
+    </div>
+</div>
+
+<div class="term hidden" id="southpaw-orthodox"><h3>Southpaw vs. Orthodox Angle Battle</h3></div>
+<div class="def kid hidden">
+    When an orthodox and a southpaw fighter meet, both compete for the outside foot position — the fighter whose lead foot is outside the opponent's lead foot controls the fight's angles and lands their power hand without obstruction. The inside foot fighter is crowded, angled away from their own power shots, and exposed to the outside fighter's rear hand. Managing this battle of feet is often more important than punch technique itself in southpaw-versus-orthodox matchups, and elite fighters constantly maneuver to win or recapture the outside foot.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Canelo Álvarez vs. Caleb Plant, Terence Crawford
+    </div>
+</div>
+
+<div class="term hidden" id="off-ropes"><h3>Getting Off the Ropes</h3></div>
+<div class="def kid hidden">
+    A critical skill for any boxer — when trapped on the ropes, options include pivoting out using the opponent's momentum against them, clinching and spinning to reverse position, rolling along the ropes to find an exit lane, or using the ropes' rebound to generate counter-punch power. Muhammad Ali turned rope fighting into an art form with his rope-a-dope strategy, but most coaches stress escaping the ropes rather than staying on them. A boxer who cannot exit the ropes safely will eventually be broken down regardless of their defensive ability.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Muhammad Ali (rope-a-dope), James Toney, Archie Moore
+    </div>
+</div>
+
+<!-- ── RING GENERALSHIP ───────────────────────────────────────────── -->
+<h2 class="section-heading hidden" id="generalship">Ring Generalship</h2>
+
+<div class="term hidden" id="ring-cutting"><h3>Ring Cutting</h3></div>
+<div class="def kid hidden">
+    The ability to anticipate an opponent's movement and position yourself to cut off their escape route, making the ring feel progressively smaller for them regardless of how much they move. Unlike simply walking someone down, true ring cutting uses diagonal footwork and angles to deny entire sections of the ring before the opponent even tries to go there. It is a chess-like spatial skill — the boxer thinks two or three steps ahead, herding rather than chasing their opponent into corners and along the ropes.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Joe Frazier, Mike Tyson, Manny Pacquiao
+    </div>
+</div>
+
+<div class="term hidden" id="ring-center"><h3>Controlling Ring Center</h3></div>
+<div class="def kid hidden">
+    The boxer who holds the center of the ring controls the fight — they dictate distance, force the opponent to move around them, and have more angles available to attack or defend from at any moment. A fighter at ring center is never backed into a corner; a fighter on the perimeter is constantly on the defensive. Controlling the center requires constant lateral repositioning after exchanges to prevent the opponent from reclaiming the middle ground. It is a concept easier to state than to execute against a skilled, aggressive opponent.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Bernard Hopkins, Floyd Mayweather Jr., Larry Holmes
+    </div>
+</div>
+
+<div class="term hidden" id="distance-mgmt"><h3>Distance Management</h3></div>
+<div class="def kid hidden">
+    The art of staying at the optimal fighting range — close enough to land with power and accuracy, far enough to avoid being hit cleanly. Every boxer has a preferred distance: sluggers want to be close, out-fighters want range, counter-punchers want their opponent just within reach. Distance management is never static; it requires constant micro-adjustments using footwork, feints, and the jab as a measuring tool. A boxer who loses control of distance loses control of the entire fight.
+    <div class="dboxers kid hidden">
+        Notable practitioners: Muhammad Ali, Willie Pep, Vasyl Lomachenko, Pernell Whitaker
+    </div>
+</div>
+
 </div>
 {% endblock %}
