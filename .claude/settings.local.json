@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"sql\\\\|SQL\\\\|query\\\\|Query\" /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/website --include=*.py)",
+      "Bash(python3 -m py_compile /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/main.py /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/website/__init__.py /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/website/auth.py /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/website/models.py /c/Users/dagye/OneDrive/Documents/GitHub/boxingwebsite/website/views.py)"
+    ]
+  }
+}

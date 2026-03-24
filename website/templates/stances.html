@@ -22,9 +22,12 @@
         </div>
     </div>
 </nav> 
-<div><a class="tarrow" id="arr" href="#top"><img class="ars" src=".\static\arrow-bar-up.svg"></a></div>
+<div><a class="tarrow" id="arr" href="#top"><img class="ars" src="{{ url_for('static', filename='arrow-bar-up.svg') }}" alt="back to top"></a></div>
 <div class="cont" id="cont">
-    <h1 class="hidden" id="hed">The Pugilist's Stance</h1>
+<div class="page-hero">
+    <h1 id="hed">The Pugilist's Stance</h1>
+    <hr>
+</div>
 <div class="term hidden" id="cg"><h3>Conventional Guard</h3></div>
     <div class="def hidden">
         The most popular stance used in the modern era of boxing,  the boxer is oriented more square 

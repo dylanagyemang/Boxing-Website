@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}{{ boxer.name }} – Boxer Profile{% endblock %}
+
+{% block content %}
+<div class="cont exp" id="cont">
+
+  <!-- Hero banner -->
+  <div class="boxer-hero">
+    <h1>{{ boxer.name }}</h1>
+    <hr>
+  </div>
+
+  <!-- Split layout: photo col + info col -->
+  <div class="row boxer-profile-row mt-4">
+
+    <!-- Left: photo + dark stat panel -->
+    <div class="boxer-profile-img-col col-12 col-md-4 mb-4 text-center">
+      {% if boxer.image_url %}
+      <img src="{{ boxer.image_url }}" class="boxer-profile-img img-fluid" alt="{{ boxer.name }}">
+      {% else %}
+      <div class="boxer-profile-placeholder">
+        <i class="fa fa-user fa-6x text-secondary"></i>
+      </div>
+      {% endif %}
+
+      <!-- Dark stat panel below photo -->
+      <div class="mt-3 p-3" style="background:var(--black-light); border:1px solid #2a2a2a; border-radius:4px; display:block !important;">
+        <table class="table table-dark table-sm boxer-bio-table mb-0">
+          <tbody>
+            {% if boxer.nationality %}
+            <tr>
+              <th scope="row" class="boxer-bio-th">Nationality</th>
+              <td>{{ boxer.nationality }}</td>
+            </tr>
+            {% endif %}
+            {% if boxer.hometown %}
+            <tr>
+              <th scope="row" class="boxer-bio-th">Hometown</th>
+              <td>{{ boxer.hometown }}</td>
+            </tr>
+            {% endif %}
+            {% if boxer.weight_class %}
+            <tr>
+              <th scope="row" class="boxer-bio-th">Division</th>
+              <td>{{ boxer.weight_class }}</td>
+            </tr>
+            {% endif %}
+            {% if boxer.stance %}
+            <tr>
+              <th scope="row" class="boxer-bio-th">Stance</th>
+              <td>{{ boxer.stance }}</td>
+            </tr>
+            {% endif %}
+            {% if boxer.years_active %}
+            <tr>
+              <th scope="row" class="boxer-bio-th">Active</th>
+              <td>{{ boxer.years_active }}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right: name, record bars, titles, actions -->
+    <div class="boxer-profile-info col-12 col-md-8">
+      <div class="boxer-profile-name">{{ boxer.name }}</div>
+      {% if boxer.nickname %}
+      <div class="boxer-profile-nickname">&ldquo;{{ boxer.nickname }}&rdquo;</div>
+      {% endif %}
+
+      <hr style="border-top:1px solid #2a2a2a; margin:1rem 0;">
+
+      <!-- Record Bootstrap progress bars -->
+      <div style="display:block !important;">
+        {% set total = total_fights if total_fights > 0 else 1 %}
+
+        <span class="boxer-progress-label">
+          Wins &nbsp;<strong style="color:var(--white);">{{ boxer.record_wins }}</strong>
+        </span>
+        <div class="progress mb-2" style="height:10px; background:#222; border-radius:4px; display:flex !important;">
+          <div class="progress-bar" role="progressbar"
+               style="width:{{ ((boxer.record_wins / total) * 100) | round(1) }}%; background-color:#2e7d32;"
+               aria-valuenow="{{ boxer.record_wins }}" aria-valuemin="0" aria-valuemax="{{ total }}"></div>
+        </div>
+
+        <span class="boxer-progress-label">
+          Losses &nbsp;<strong style="color:var(--white);">{{ boxer.record_losses }}</strong>
+        </span>
+        <div class="progress mb-2" style="height:10px; background:#222; border-radius:4px; display:flex !important;">
+          <div class="progress-bar" role="progressbar"
+               style="width:{{ ((boxer.record_losses / total) * 100) | round(1) }}%; background-color:var(--red);"
+               aria-valuenow="{{ boxer.record_losses }}" aria-valuemin="0" aria-valuemax="{{ total }}"></div>
+        </div>
+
+        <span class="boxer-progress-label">
+          Draws &nbsp;<strong style="color:var(--white);">{{ boxer.record_draws }}</strong>
+        </span>
+        <div class="progress mb-2" style="height:10px; background:#222; border-radius:4px; display:flex !important;">
+          <div class="progress-bar" role="progressbar"
+               style="width:{{ ((boxer.record_draws / total) * 100) | round(1) }}%; background-color:#555;"
+               aria-valuenow="{{ boxer.record_draws }}" aria-valuemin="0" aria-valuemax="{{ total }}"></div>
+        </div>
+
+        {% if boxer.record_wins > 0 %}
+        {% set ko_pct = ((boxer.wins_by_ko / boxer.record_wins) * 100) | round(1) %}
+        <span class="boxer-progress-label">
+          KO Rate &nbsp;<strong style="color:var(--gold);">{{ ko_pct }}%</strong>
+          <span style="color:#666; font-size:0.75rem; font-family:'Open Sans',sans-serif;">&nbsp;({{ boxer.wins_by_ko }} of {{ boxer.record_wins }} wins)</span>
+        </span>
+        <div class="progress mb-3" style="height:10px; background:#222; border-radius:4px; display:flex !important;">
+          <div class="progress-bar" role="progressbar"
+               style="width:{{ ko_pct }}%; background-color:var(--gold);"
+               aria-valuenow="{{ ko_pct }}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        {% endif %}
+
+        <p class="text-muted" style="font-size:0.85rem; display:block !important;">
+          Total fights: <strong style="color:var(--white);">{{ total_fights }}</strong>
+          {% if boxer.no_contests %}&nbsp;·&nbsp;{{ boxer.no_contests }} No Contest{{ 's' if boxer.no_contests != 1 }}{% endif %}
+        </p>
+      </div>
+
+      <!-- Titles as chips -->
+      {% if titles_list %}
+      <hr style="border-top:1px solid #2a2a2a; margin:1rem 0;">
+      <div style="display:block !important;">
+        <span class="section-heading" style="margin-top:0;">Titles &amp; Accomplishments</span>
+        <div style="display:block !important; margin-top:0.75rem;">
+          {% for title in titles_list %}
+          <span class="title-chip">{{ title }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Action buttons -->
+      <div class="boxer-actions mt-4 mb-4">
+        {% if boxer.wikipedia_url %}
+        <a href="{{ boxer.wikipedia_url }}" target="_blank" rel="noopener noreferrer"
+           class="boxer-wiki-btn">
+          Wikipedia &rarr;
+        </a>
+        {% endif %}
+        <a href="/boxers" class="btn btn-danger" style="font-family:'Oswald',sans-serif; letter-spacing:0.06em; font-size:0.9rem;">&larr; All Boxers</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
