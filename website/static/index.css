@@ -7,7 +7,12 @@ h1{
 }
 .term{
     margin-top: 2.5rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-left: 3px solid #c9a84c;
+    padding-left: 0.6rem;
+    letter-spacing: 0.02em;
 }
 .wholeterm{
     display: inline-flex !important;
@@ -19,7 +24,8 @@ video{
     margin-right: 1rem;
 }
 .def{
-    margin-top:1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 ul{
     list-style: none;
@@ -52,25 +58,26 @@ div{
     transition: .75s;
 }
 #sidebar{
-    font-size: 13px !important;
-    font-weight: bold !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
 }
 #subnav{
     display:grid !important;
     text-align: left !important;
-    background-color: #e6b869 !important;
+    background-color: #111 !important;
     text-transform: uppercase !important;
-    height: 100% !important; /* 100% Full-height */
-    width: 14rem; /* 0 width - change this with JavaScript */
-    position: fixed !important; /* Stay in place */
-    z-index: 1 !important; /* Stay on top */
-    top: 0 !important; /* Stay at the top */
+    height: 100% !important;
+    width: 14rem;
+    position: fixed !important;
+    z-index: 1 !important;
+    top: 0 !important;
     right: 0 !important;
-    overflow-x: hidden !important; /* Disable horizontal scroll */
-    padding-top: 0px !important; /* Place content 60px from the top */
+    overflow-x: hidden !important;
+    padding-top: 0px !important;
     padding-bottom: 0px !important;
     transition: .75s;
-    border-left: .1rem solid aliceblue;
+    border-left: 1px solid #2a2a2a !important;
 }
 .toggler{
     display:grid !important;
@@ -102,9 +109,9 @@ div{
     border: none !important;
 }
 .tcolor span{
-    border: .1rem solid aliceblue !important;
+    border: .1rem solid #c9a84c !important;
     border-radius: .3rem;
-    background-color: #e6b869;
+    background-color: #c9a84c;
     transition: .5s;
 }
 .tcolor{
@@ -154,14 +161,15 @@ div{
 body{
     background-color: black;
     color: aliceblue;
+    line-height: 1.75;
 }
 
 #top{
-    margin-top: -1rem !important;
+    margin-top: 0 !important;
     margin-left: -1rem !important;
     margin-right: -1rem !important;
-    
-    height: 4rem !important;
+    min-height: 3.5rem;
+    height: auto !important;
     background-color: #f00820 !important;
 }
 #top a:hover{
@@ -220,16 +228,21 @@ footer a:hover{
     transition-delay: 200ms;
 }
 .vi1{
-    border: 3px groove #3d9943;
+    border: 2px solid #c9a84c;
+    box-shadow: 0 0 10px rgba(201, 168, 76, 0.25);
     box-sizing: border-box;
+    border-radius: 2px;
 }
 .vi2{
-    border: 3px groove #a33128;
+    border: 2px solid #a33128;
+    box-shadow: 0 0 8px rgba(163, 49, 40, 0.2);
     box-sizing: border-box;
+    border-radius: 2px;
 }
 .vi3{
-    border: 3px groove #b9b360;
+    border: 2px solid #c9a84c;
     box-sizing: border-box;
+    border-radius: 2px;
 }
 
 a:hover{
@@ -529,3 +542,114 @@ figure h3{
     border-color: #f00820;
 }
 .boxer-pagination .page-item.disabled .page-link { color: #555; }
+
+/* =============================================
+   UI/UX IMPROVEMENTS
+   ============================================= */
+
+/* --- Auth bar (slim top strip) --- */
+#auth-bar {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #0d0d0d;
+    padding: 0.3rem 1.25rem;
+    margin: -1rem -1rem 0 -1rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #1c1c1c;
+    min-height: 2rem;
+    gap: 0.75rem;
+}
+
+.auth-bar-greeting {
+    color: #666;
+    font-size: 0.78rem;
+}
+
+.auth-link {
+    color: #999;
+    text-decoration: none;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    transition: color 0.2s;
+    border: none !important;
+    background: transparent !important;
+}
+
+.auth-link:hover {
+    color: #c9a84c !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* --- Navbar active state --- */
+#top .nav-link {
+    position: relative;
+    padding-bottom: 0.35rem;
+}
+
+#top .nav-link.active {
+    color: #c9a84c !important;
+    font-weight: 600;
+}
+
+#top .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: #c9a84c;
+    border-radius: 1px;
+}
+
+/* --- Sidebar link styles --- */
+#subnav .nav-link,
+#subnav li a {
+    color: #c9a84c !important;
+    padding: 0.65rem 1.2rem;
+    border-left: 3px solid transparent;
+    display: block !important;
+    text-decoration: none;
+    transition: color 0.2s, border-left-color 0.2s, background-color 0.2s;
+}
+
+#subnav .nav-link:hover,
+#subnav li a:hover {
+    color: aliceblue !important;
+    border-left-color: #f00820 !important;
+    background-color: #1a1a1a !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}
+
+/* --- Toggle arrow — visible against dark sidebar --- */
+.toggler {
+    background-color: #1a1a1a !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 4px !important;
+}
+
+.closebtn span:hover {
+    background-color: #f00820 !important;
+    border-color: #f00820 !important;
+}
+
+/* --- Video — gold accent, no green --- */
+video {
+    margin-right: 1rem;
+    max-width: 100%;
+    border-radius: 2px;
+}
+
+/* --- Paragraph spacing & line height --- */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Consistent section breathing room */
+.wholeterm + .wholeterm {
+    padding-top: 2rem;
+}

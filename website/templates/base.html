@@ -19,31 +19,40 @@
         <title>{% block title %}The Pugilist's Encyclopedia{% endblock %}</title>
     </head>
     <body class="p-3 m-0 border-0 bd-example">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-danger" id="top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+
+        <!-- slim auth bar -->
+        <div id="auth-bar">
+            {% if current_user.is_authenticated %}
+                <span class="auth-bar-greeting">Hi, {{ current_user.first_name }}</span>
+                <a class="auth-link" href="/logout">Logout</a>
+            {% else %}
+                <a class="auth-link" href="/login">Login</a>
+                <a class="auth-link" href="/signup">Signup</a>
+            {% endif %}
+        </div>
+
+        <!-- main content navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" id="top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse" id="navbar">
-                <div class="navbar-nav">
-                    {% if current_user.is_authenticated %}
-                        <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-                    {% else %}
-                        <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                        <a class="nav-item nav-link" id="signup" href="/signup">Signup</a>
-                    {% endif %}
-                    <a class="nav-item nav-link" id="home" href="/">Home</a>
-                    <a class="nav-item nav-link" id="styles" href="/styles">Styles</a>
-                    <a class="nav-item nav-link" id="stances" href="/stances">Stances</a>
-                    <a class="nav-item nav-link" id="jab" href="/jab">The Jab</a>
-                    <a class="nav-item nav-link" id="cross" href="/cross">The Straight/Cross</a>
-                    <a class="nav-item nav-link" id="hook" href="/hook">The Hook</a>
-                    <a class="nav-item nav-link" id="uppercuts" href="/uppercut">The Uppercut</a>
-                    <a class="nav-item nav-link" id="movement" href="/movement">Movement and Angles</a>
-                    <a class="nav-item nav-link" id="quiz" href="/quiz">IQ</a>
-                    <a class="nav-item nav-link" id="boxers" href="/boxers">Boxers</a>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav flex-wrap">
+                    <a class="nav-item nav-link{% if request.path == '/' %} active{% endif %}" href="/">Home</a>
+                    <a class="nav-item nav-link{% if request.path == '/styles' %} active{% endif %}" href="/styles">Styles</a>
+                    <a class="nav-item nav-link{% if request.path == '/stances' %} active{% endif %}" href="/stances">Stances</a>
+                    <a class="nav-item nav-link{% if request.path == '/jab' %} active{% endif %}" href="/jab">The Jab</a>
+                    <a class="nav-item nav-link{% if request.path == '/cross' %} active{% endif %}" href="/cross">The Straight/Cross</a>
+                    <a class="nav-item nav-link{% if request.path == '/hook' %} active{% endif %}" href="/hook">The Hook</a>
+                    <a class="nav-item nav-link{% if request.path == '/uppercut' %} active{% endif %}" href="/uppercut">The Uppercut</a>
+                    <a class="nav-item nav-link{% if request.path == '/movement' %} active{% endif %}" href="/movement">Movement and Angles</a>
+                    <a class="nav-item nav-link{% if request.path == '/quiz' %} active{% endif %}" href="/quiz">IQ</a>
+                    <a class="nav-item nav-link{% if request.path.startswith('/boxers') %} active{% endif %}" href="/boxers">Boxers</a>
                 </div>
             </div>
         </nav>
+
         <div class="flash">{% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -65,6 +74,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}</div>
+
         <div class="container">
             {% block content %}
             {% endblock %}
