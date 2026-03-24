@@ -195,12 +195,9 @@ hr {
     border-radius: .25rem;
 }
 footer {
-    background-color:  #f00820 !important;
-    margin-bottom: 0rem;
-    left: -1;
-    bottom: 0;
-    min-height: 85px;
-    width: 100% !important;  
+    background-color: #f00820 !important;
+    margin-bottom: 0;
+    width: 100% !important;
 }
 .flash{
     position: sticky !important;
@@ -542,6 +539,134 @@ figure h3{
     border-color: #f00820;
 }
 .boxer-pagination .page-item.disabled .page-link { color: #555; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+    background-color: #f00820 !important;
+    margin-bottom: 0;
+    width: 100% !important;
+    min-height: unset;
+    /* remove the broken left:-1 from old rule */
+}
+
+.footer-email {
+    color: aliceblue !important;
+    text-decoration: none;
+}
+
+.footer-email:hover {
+    color: #c9a84c !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.footer-discord-btn {
+    background-color: #1a1a1a;
+    color: aliceblue !important;
+    border: 1px solid #444;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block !important;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.footer-discord-btn:hover {
+    background-color: #2a2a2a !important;
+    border-color: #c9a84c !important;
+    color: #c9a84c !important;
+}
+
+/* =============================================
+   HOMEPAGE CARDS
+   ============================================= */
+
+/* Gold rule beneath the main heading */
+hr.home-heading-rule {
+    border: none !important;
+    border-top: 2px solid #c9a84c !important;
+    width: 55%;
+    margin: 0.25rem auto 1.75rem auto;
+    display: block;
+}
+
+/* Card columns: three per row on desktop, two on tablet, one on mobile.
+   Uses !important to win against the global .col-sm-12 max-width: 33vw rule. */
+.home-card-col {
+    flex: 0 0 33.33%;
+    max-width: 33.33% !important;
+    max-height: none !important;
+    padding: 0.4rem !important;
+    border: none !important;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible;
+}
+
+@media (max-width: 768px) {
+    .home-card-col {
+        flex: 0 0 50%;
+        max-width: 50% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-card-col {
+        flex: 0 0 100%;
+        max-width: 100% !important;
+    }
+}
+
+/* 16:9 cinematic figure — padding-top trick sets intrinsic ratio */
+.home-figure {
+    position: relative !important;
+    width: 100% !important;
+    padding-top: 56.25% !important;   /* 9/16 = 56.25% */
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+/* Override the global figure img constraints for home cards only */
+.home-figure img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* Keep overlays and h3 working inside the new figure */
+.home-figure figcaption {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: 100% !important;
+    min-width: 100% !important;
+}
+
+.home-figure h3 {
+    position: absolute !important;
+    top: 90% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    z-index: 2;
+}
+
+/* Row reset so home cards aren't affected by .home margin-left: 5vw
+   when the sidebar is open */
+.home-cards-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 
 /* =============================================
    UI/UX IMPROVEMENTS

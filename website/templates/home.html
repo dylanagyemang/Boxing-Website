@@ -1,103 +1,116 @@
-{% extends "base.html" %} {% block title %}The Pugilist's Encyclopedia{% endblock %} 
-{% block content %} 
+{% extends "base.html" %} {% block title %}The Pugilist's Encyclopedia{% endblock %}
+{% block content %}
 <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-right hide" id="subnav" role='navigation'>
     <button class="toggler closebtn tcolor" id="toggler" type="button" onclick='toggleNav()'>
         <span>
-            <img class="manImg" src="./static/caret-right.svg"></img>
+            <img class="manImg" src="{{ url_for('static', filename='caret-right.svg') }}" alt="toggle">
         </span>
     </button>
     <div class="navbar-collapse sidebar" id="navbar">
         <div class="navbar-nav collapse show" id="sidebar">
-            <ul>
-            </ul>
+            <ul></ul>
         </div>
     </div>
 </nav>
+
 <div class="cont exp" id="cont">
     <h1 class="hidden exp" id="hed">The Pugilist's Encyclopedia</h1>
-    <div><a class="tarrow adjustarrow" id="arr" href="#top"><img class="ars" src=".\static\arrow-bar-up.svg"></a></div>
-<div>
-    <div class="row home show exp">
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\styles.gif" alt="Styles">
-                <h3>Styles</h3>
-                <a class="overlink" href="/styles" target="_blank"><figcaption class="overlay">
-                    <p>Styles of the Pugilist</p>
-                    <p><strong>Tags:</strong> <br></p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\1b529f9dd4c2e7124d42187a6fe2c158.gif" alt="Stances">
-                <h3>Stances</h3>
-                <a class="overlink" href="/stances" target="_blank"><figcaption class="overlay1">
-                    <p>Fighting Stances</p>
-                    <p><strong>Tags:</strong> <br></p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\jab home gif.gif" alt="Jab">
-                <h3>The Jab</h3>
-                <a class="overlink" href="/jab" target="_blank"><figcaption class="overlay2">
-                    
-                    <p>The Jab and its Variants</p>
-                    <p><strong>Tags:</strong> <br>Jab, 45-Degree Jab, Backhand Jab...</p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\straights.gif" alt="Cross">
-                <h3>The Cross</h3>
-                <a class="overlink" href="/cross" target="_blank"><figcaption class="overlay">
-                    <p>The Cross and its Variants</p>
-                    <p><strong>Tags:</strong> <br>Straight</p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\1b529f9dd4c2e7124d42187a6fe2c158.gif" alt="Hook">
-                <h3>The Hook</h3>
-                <a class="overlink" href="/hook" target="_blank"><figcaption class="overlay1">
-                    <p>The Hook and its Variants</p>
-                    <p><strong>Tags:</strong> <br>Straight</p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\uppercut.gif" alt="Styles">
-                <h3>The Uppercut</h3>
-                <a class="overlink" href="/uppercut" target="_blank"><figcaption class="overlay2">
-                    <p>The Uppercut and its Variants</p>
-                    <p><strong>Tags:</strong> <br>Straight</p>
-                </figcaption> </a>
-            </figure>
-        </div>
-        <div class="col-sm-12">
-            <figure class="effect">
-                <img src=".\static\1b529f9dd4c2e7124d42187a6fe2c158.gif" alt="Styles">
-                <h3>Movement</h3>
-                <a class="overlink" href="/movement" target="_blank"><figcaption class="overlay">
-                    <p>Movements of the Pugilist</p>
-                    <p><strong>Tags:</strong> <br></p>
-                </figcaption></a>
-            </figure>
+    <hr class="home-heading-rule">
+    <div><a class="tarrow adjustarrow" id="arr" href="#top"><img class="ars" src="{{ url_for('static', filename='arrow-bar-up.svg') }}" alt="back to top"></a></div>
+
+    <div>
+        <div class="row home show exp home-cards-row">
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='styles.gif') }}" alt="Styles">
+                    <h3>Styles</h3>
+                    <a class="overlink" href="/styles"><figcaption class="overlay">
+                        <p>Styles of the Pugilist</p>
+                        <p><strong>Tags:</strong><br></p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='1b529f9dd4c2e7124d42187a6fe2c158.gif') }}" alt="Stances">
+                    <h3>Stances</h3>
+                    <a class="overlink" href="/stances"><figcaption class="overlay1">
+                        <p>Fighting Stances</p>
+                        <p><strong>Tags:</strong><br></p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='jab home gif.gif') }}" alt="Jab">
+                    <h3>The Jab</h3>
+                    <a class="overlink" href="/jab"><figcaption class="overlay2">
+                        <p>The Jab and its Variants</p>
+                        <p><strong>Tags:</strong><br>Jab, 45-Degree Jab, Backhand Jab...</p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='straights.gif') }}" alt="Cross">
+                    <h3>The Cross</h3>
+                    <a class="overlink" href="/cross"><figcaption class="overlay">
+                        <p>The Cross and its Variants</p>
+                        <p><strong>Tags:</strong><br>Straight</p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='1b529f9dd4c2e7124d42187a6fe2c158.gif') }}" alt="Hook">
+                    <h3>The Hook</h3>
+                    <a class="overlink" href="/hook"><figcaption class="overlay1">
+                        <p>The Hook and its Variants</p>
+                        <p><strong>Tags:</strong><br>Hook, Lead Hook...</p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='uppercut.gif') }}" alt="Uppercut">
+                    <h3>The Uppercut</h3>
+                    <a class="overlink" href="/uppercut"><figcaption class="overlay2">
+                        <p>The Uppercut and its Variants</p>
+                        <p><strong>Tags:</strong><br>Lead Uppercut, Rear Uppercut...</p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
+            <div class="col-sm-12 home-card-col mb-4">
+                <figure class="effect home-figure">
+                    <img src="{{ url_for('static', filename='1b529f9dd4c2e7124d42187a6fe2c158.gif') }}" alt="Movement">
+                    <h3>Movement</h3>
+                    <a class="overlink" href="/movement"><figcaption class="overlay">
+                        <p>Movements of the Pugilist</p>
+                        <p><strong>Tags:</strong><br></p>
+                    </figcaption></a>
+                </figure>
+            </div>
+
         </div>
     </div>
 </div>
-</div>
 {% endblock %}
+
 {% block footer %}
-    <footer align="center" class="exp" id="foot">
-        <p><strong>Author: Dylan Agyemang</strong><br>
-        <a href="mailto:dagyeman12@gmail.com">dagyeman12@gmail.com</a><br>
-        <a href="https://discord.gg/jtBUvZaDH2" id="disc" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/-Discord-%237289d9?style=for-the-badge&logo=discord&logoColor=white">
-        </a></p>
-    </footer>{% endblock %}
+<footer id="foot" class="w-100 py-4 text-center">
+    <p class="mb-1"><strong>Author: Dylan Agyemang</strong></p>
+    <p class="mb-3">
+        <a href="mailto:dagyeman12@gmail.com" class="footer-email">dagyeman12@gmail.com</a>
+    </p>
+    <a href="https://discord.gg/jtBUvZaDH2" target="_blank" rel="noopener noreferrer" class="footer-discord-btn px-4 py-2">
+        <i class="fa fa-comments mr-1"></i> Discord
+    </a>
+</footer>
+{% endblock %}
