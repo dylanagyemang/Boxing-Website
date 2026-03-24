@@ -1,13 +1,15 @@
 {% extends "base.html" %} {% block title %}The Pugilist's Encyclopedia{% endblock %}
-{% block content %}
 
+{% block full_width %}
 <div class="home-hero">
     <h1 id="hed">The Pugilist's Encyclopedia</h1>
     <hr class="home-hero-rule">
     <span class="home-hero-subtitle">The art, science, and history of boxing — all in one place.</span>
     <a class="home-hero-cta" href="#cards">Explore</a>
 </div>
+{% endblock %}
 
+{% block content %}
 <div id="cards">
     <span class="home-section-title text-center">Explore the Encyclopedia</span>
     <hr class="home-section-rule">
