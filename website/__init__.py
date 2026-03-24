@@ -19,11 +19,13 @@ def create_app():
 
     from .views import views
     from .auth import auth
+    from .boxers import boxers_bp
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(boxers_bp, url_prefix='/')
 
-    from .models import User, Note
+    from .models import User, Note, Boxer  # noqa: F401
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -34,8 +36,7 @@ def create_app():
         return User.query.get(int(id))
 
     with app.app_context():
-        if not path.exists('website/' + DB_NAME):
-            db.create_all()
-            print('Created Database')
+        # create_all is safe to call on an existing DB — it only adds missing tables
+        db.create_all()
 
     return app

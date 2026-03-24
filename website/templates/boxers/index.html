@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Boxer Database{% endblock %}
+
+{% block content %}
+<div class="cont exp" id="cont">
+  <h1 class="hidden exp" id="hed">Boxer Database</h1>
+
+  <!-- Search -->
+  <div class="row mb-3">
+    <div class="boxer-search-wrapper col-12">
+      <div class="input-group">
+        <input type="text" id="boxer-search" class="form-control bg-dark text-light border-secondary"
+               placeholder="Search by name or nickname…" autocomplete="off">
+        <div class="input-group-append">
+          <span class="input-group-text bg-danger border-danger text-white">
+            <i class="fa fa-search"></i>
+          </span>
+        </div>
+      </div>
+      <div id="search-results" class="list-group boxer-search-dropdown"></div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <form method="GET" action="/boxers" class="row mb-4">
+    <div class="boxer-filter-col col-sm-5 mb-2">
+      <select name="weight_class" class="form-control bg-dark text-light border-secondary">
+        <option value="">All Weight Classes</option>
+        {% for wc in weight_classes %}
+        <option value="{{ wc }}" {% if wc == selected_weight_class %}selected{% endif %}>{{ wc }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="boxer-filter-col col-sm-5 mb-2">
+      <select name="nationality" class="form-control bg-dark text-light border-secondary">
+        <option value="">All Nationalities</option>
+        {% for nat in nationalities %}
+        <option value="{{ nat }}" {% if nat == selected_nationality %}selected{% endif %}>{{ nat }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="boxer-filter-col col-sm-2 mb-2">
+      <button type="submit" class="btn btn-danger btn-block">Filter</button>
+    </div>
+  </form>
+
+  <!-- Card grid -->
+  {% if boxers.items %}
+  <div class="row boxer-grid">
+    {% for boxer in boxers.items %}
+    <div class="boxer-col col-12 col-md-6 col-lg-4 mb-4">
+      <a href="/boxers/{{ boxer.id }}" class="text-decoration-none">
+        <div class="card boxer-card h-100">
+          {% if boxer.image_url %}
+          <img src="{{ boxer.image_url }}" class="card-img-top boxer-card-img" alt="{{ boxer.name }}">
+          {% else %}
+          <div class="boxer-card-placeholder">
+            <i class="fa fa-user fa-4x"></i>
+          </div>
+          {% endif %}
+          <div class="card-body boxer-card-body">
+            <h5 class="card-title mb-1">{{ boxer.name }}</h5>
+            {% if boxer.nickname %}
+            <p class="text-muted mb-2 small">"{{ boxer.nickname }}"</p>
+            {% endif %}
+            <p class="mb-1">
+              <span class="badge badge-danger">{{ boxer.weight_class or 'Unknown' }}</span>
+              {% if boxer.nationality %}
+              <span class="badge badge-secondary ml-1">{{ boxer.nationality }}</span>
+              {% endif %}
+            </p>
+            <p class="mb-0 boxer-record">
+              {{ boxer.record_wins }}-{{ boxer.record_losses }}-{{ boxer.record_draws }}
+              <small class="text-muted">&nbsp;({{ boxer.wins_by_ko }} KO)</small>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if boxers.pages > 1 %}
+  {% set qs_wc = ('&weight_class=' ~ selected_weight_class) if selected_weight_class else '' %}
+  {% set qs_nat = ('&nationality=' ~ selected_nationality) if selected_nationality else '' %}
+  <nav aria-label="Boxer pages">
+    <ul class="pagination justify-content-center boxer-pagination">
+      <li class="page-item {% if not boxers.has_prev %}disabled{% endif %}">
+        <a class="page-link" href="?page={{ boxers.prev_num }}{{ qs_wc }}{{ qs_nat }}">&laquo;</a>
+      </li>
+      {% for p in boxers.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+        {% if p %}
+        <li class="page-item {% if p == boxers.page %}active{% endif %}">
+          <a class="page-link" href="?page={{ p }}{{ qs_wc }}{{ qs_nat }}">{{ p }}</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">…</span></li>
+        {% endif %}
+      {% endfor %}
+      <li class="page-item {% if not boxers.has_next %}disabled{% endif %}">
+        <a class="page-link" href="?page={{ boxers.next_num }}{{ qs_wc }}{{ qs_nat }}">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+  {% endif %}
+
+  {% else %}
+  <div class="alert alert-info" role="alert">
+    No boxers found.
+    {% if selected_weight_class or selected_nationality %}
+      Try clearing the filters, or
+    {% endif %}
+    run <code>python scrape_boxers.py</code> to populate the database.
+  </div>
+  {% endif %}
+</div>
+
+<script>
+(function () {
+  var searchInput = document.getElementById('boxer-search');
+  var resultsBox  = document.getElementById('search-results');
+  var timer;
+
+  searchInput.addEventListener('input', function () {
+    clearTimeout(timer);
+    var q = this.value.trim();
+    if (q.length < 2) { resultsBox.innerHTML = ''; return; }
+    timer = setTimeout(function () {
+      fetch('/boxers/search?q=' + encodeURIComponent(q))
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          resultsBox.innerHTML = '';
+          if (!data.length) return;
+          data.forEach(function (b) {
+            var a = document.createElement('a');
+            a.href = '/boxers/' + b.id;
+            a.className = 'list-group-item list-group-item-action list-group-item-dark';
+            a.innerHTML =
+              '<strong>' + b.name + '</strong>' +
+              (b.nickname ? ' <em class="text-muted">&ldquo;' + b.nickname + '&rdquo;</em>' : '') +
+              '<span class="badge badge-danger float-right">' + (b.weight_class || '') + '</span>' +
+              '<br><small class="text-muted">' + b.record + '</small>';
+            resultsBox.appendChild(a);
+          });
+        });
+    }, 300);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!searchInput.contains(e.target) && !resultsBox.contains(e.target)) {
+      resultsBox.innerHTML = '';
+    }
+  });
+}());
+</script>
+{% endblock %}

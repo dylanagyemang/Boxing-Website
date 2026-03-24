@@ -355,3 +355,177 @@ figure h3{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+/* =============================================
+   BOXER DATABASE
+   ============================================= */
+
+/* Reset grid/size constraints imposed by global rules
+   for every element inside the boxer section */
+.boxer-search-wrapper,
+.boxer-filter-col,
+.boxer-grid,
+.boxer-col,
+.boxer-card,
+.boxer-card-body,
+.boxer-card-placeholder,
+.boxer-profile-row,
+.boxer-profile-img-col,
+.boxer-profile-info,
+.boxer-stats-row,
+.boxer-stat-col,
+.boxer-stat-card,
+.boxer-stat-body,
+.boxer-bio-table,
+.boxer-bio-table td,
+.boxer-bio-table th,
+.boxer-titles-list,
+.boxer-titles-list li,
+.boxer-ko-bar-wrap,
+.boxer-ko-progress,
+.boxer-actions,
+.boxer-pagination,
+.boxer-pagination li,
+.boxer-pagination a,
+.boxer-record {
+    display: block !important;
+    max-width: none !important;
+    max-height: none !important;
+    border: none;
+    padding: unset;
+    place-items: unset;
+    align-content: unset;
+}
+
+/* Re-apply flex where Bootstrap needs it */
+.boxer-grid { display: flex !important; flex-wrap: wrap; }
+.boxer-stats-row { display: flex !important; flex-wrap: wrap; }
+.boxer-profile-row { display: flex !important; flex-wrap: wrap; }
+.boxer-pagination { display: flex !important; flex-wrap: wrap; justify-content: center; }
+.boxer-search-wrapper { position: relative; }
+
+/* Boxer listing cards */
+.boxer-col { padding: 0.5rem !important; }
+
+.boxer-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333 !important;
+    color: aliceblue;
+    transition: border-color .3s, transform .3s;
+    cursor: pointer;
+}
+.boxer-card:hover {
+    border-color: #f00820 !important;
+    transform: translateY(-4px);
+}
+
+.boxer-card-img {
+    height: 230px;
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+}
+
+.boxer-card-placeholder {
+    height: 230px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    color: #444;
+}
+
+.boxer-card-body { padding: 1rem !important; }
+
+.boxer-record {
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+/* Search dropdown */
+.boxer-search-dropdown {
+    position: absolute;
+    z-index: 1050;
+    width: 100%;
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid #444;
+}
+.boxer-search-dropdown:empty { display: none !important; }
+
+/* Filter row */
+.boxer-filter-col { padding: 0 0.5rem !important; }
+
+/* Profile page */
+.boxer-profile-img-col { padding: 0 1rem !important; }
+.boxer-profile-info { padding: 0 1rem !important; }
+
+.boxer-profile-img {
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #f00820;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.boxer-profile-placeholder {
+    height: 300px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    border: 2px solid #f00820;
+    border-radius: 4px;
+}
+
+/* Stat cards */
+.boxer-stat-col { padding: 0.4rem !important; }
+
+.boxer-stat-card {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: aliceblue !important;
+}
+
+.boxer-stat-body { padding: 1rem !important; }
+
+/* Bio table */
+.boxer-bio-table { margin-top: 1rem; }
+.boxer-bio-table tbody { display: table-row-group !important; }
+.boxer-bio-table tr { display: table-row !important; }
+.boxer-bio-table td,
+.boxer-bio-table th { display: table-cell !important; padding: .4rem .6rem !important; }
+.boxer-bio-th { width: 35%; color: #e6b869; }
+
+/* KO progress bar */
+.boxer-ko-bar-wrap { max-width: 400px; }
+.boxer-ko-progress {
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    display: flex !important;
+}
+.boxer-ko-progress .progress-bar { border-radius: 4px; }
+
+/* Titles list */
+.boxer-titles-list .list-group-item-dark {
+    background-color: #1a1a1a;
+    color: aliceblue;
+    border-color: #333;
+}
+
+/* Action buttons row */
+.boxer-actions { display: flex !important; gap: .5rem; flex-wrap: wrap; }
+
+/* Pagination */
+.boxer-pagination .page-link {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: aliceblue;
+}
+.boxer-pagination .page-item.active .page-link {
+    background-color: #f00820;
+    border-color: #f00820;
+}
+.boxer-pagination .page-item.disabled .page-link { color: #555; }
