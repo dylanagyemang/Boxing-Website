@@ -1,9 +1,394 @@
 {% extends "base.html" %} {% block title %}Boxing IQ{% endblock %}
 {% block content %}
+
 <div class="cont exp" id="cont">
-    <h1 class="hidden exp" id="hed">Test Your Boxing IQ</h1>
-    <div class="alert alert-warning" role="alert">
-        The quiz is coming soon. Check back later!
+
+  <div class="page-hero">
+    <h1 id="hed">Test Your Boxing IQ</h1>
+    <hr>
+  </div>
+
+  <p class="quiz-intro">20 questions covering punches, stances, and styles from across the encyclopedia. See how much you've learned.</p>
+
+  <form id="quiz-form" novalidate>
+
+    <!-- Q1 -->
+    <div class="quiz-card" id="q1">
+      <div class="quiz-num">01</div>
+      <div class="quiz-question">What number is traditionally assigned to the jab in boxing?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q1" value="a"> <span>2</span></label>
+        <label class="quiz-option"><input type="radio" name="q1" value="b"> <span>1</span></label>
+        <label class="quiz-option"><input type="radio" name="q1" value="c"> <span>3</span></label>
+        <label class="quiz-option"><input type="radio" name="q1" value="d"> <span>4</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The jab is punch #1 — thrown with the lead hand in a straight line, it's the fastest and most versatile strike in boxing."></div>
     </div>
+
+    <!-- Q2 -->
+    <div class="quiz-card" id="q2">
+      <div class="quiz-num">02</div>
+      <div class="quiz-question">Who is credited with inventing the uppercut?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q2" value="a"> <span>Jack Dempsey</span></label>
+        <label class="quiz-option"><input type="radio" name="q2" value="b"> <span>Henry Armstrong</span></label>
+        <label class="quiz-option"><input type="radio" name="q2" value="c"> <span>Samuel Elias ('Dutch Sam')</span></label>
+        <label class="quiz-option"><input type="radio" name="q2" value="d"> <span>Charles 'Kid' McCoy</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The lead uppercut was invented by Samuel Elias, also known as 'Dutch Sam', in the late 18th century."></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-card" id="q3">
+      <div class="quiz-num">03</div>
+      <div class="quiz-question">Which boxing style is described as the natural kryptonite of the pure boxer?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q3" value="a"> <span>Slugger</span></label>
+        <label class="quiz-option"><input type="radio" name="q3" value="b"> <span>Brawler</span></label>
+        <label class="quiz-option"><input type="radio" name="q3" value="c"> <span>Pressure Fighter</span></label>
+        <label class="quiz-option"><input type="radio" name="q3" value="d"> <span>Swarmer</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="d" data-explanation="The Swarmer is the natural kryptonite of the pure boxer — their storm of combinations disrupts the boxer's rhythm and outscores their conservative pot-shotting."></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-card" id="q4">
+      <div class="quiz-num">04</div>
+      <div class="quiz-question">The Philly Shell (Stonewall Defense) was originally developed in which city?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q4" value="a"> <span>Philadelphia</span></label>
+        <label class="quiz-option"><input type="radio" name="q4" value="b"> <span>Chicago</span></label>
+        <label class="quiz-option"><input type="radio" name="q4" value="c"> <span>Detroit</span></label>
+        <label class="quiz-option"><input type="radio" name="q4" value="d"> <span>New York</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="Despite the name, the Philly Shell is a variation of the Cross-Guard developed in Detroit, Michigan. It was later popularized by Floyd Mayweather."></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-card" id="q5">
+      <div class="quiz-num">05</div>
+      <div class="quiz-question">Which straight/cross variant generates power by twisting the fist so the palm faces outward on impact?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q5" value="a"> <span>Chopping Right</span></label>
+        <label class="quiz-option"><input type="radio" name="q5" value="b"> <span>Overhand</span></label>
+        <label class="quiz-option"><input type="radio" name="q5" value="c"> <span>Corkscrew Punch</span></label>
+        <label class="quiz-option"><input type="radio" name="q5" value="d"> <span>Underhand Straight</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Corkscrew Punch is a very powerful straight where the power comes from the torque of twisting the fist so the palm faces outward. Associated with Wladimir Klitschko and Anthony Joshua."></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="quiz-card" id="q6">
+      <div class="quiz-num">06</div>
+      <div class="quiz-question">Which jab is thrown in a downward motion from the high guard?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q6" value="a"> <span>Up Jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q6" value="b"> <span>Vertical Jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q6" value="c"> <span>Pawing Jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q6" value="d"> <span>Trip-Hammer Jab</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="d" data-explanation="The Trip-Hammer Jab is not particularly strong, but is thrown in a downward motion from the high guard to occupy or remove the opponent's guard. Notable users: Adrien Broner and Canelo Alvarez."></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="quiz-card" id="q7">
+      <div class="quiz-num">07</div>
+      <div class="quiz-question">The Peek-a-boo defense was popularized by trainer Cus D'amato. Which two boxers are most associated with this stance?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q7" value="a"> <span>Muhammad Ali and Joe Frazier</span></label>
+        <label class="quiz-option"><input type="radio" name="q7" value="b"> <span>Floyd Patterson and Mike Tyson</span></label>
+        <label class="quiz-option"><input type="radio" name="q7" value="c"> <span>Sugar Ray Leonard and Thomas Hearns</span></label>
+        <label class="quiz-option"><input type="radio" name="q7" value="d"> <span>Archie Moore and Ken Norton</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="Cus D'amato developed the Peek-a-boo stance with his two most famous protégés: Floyd Patterson and Mike Tyson."></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="quiz-card" id="q8">
+      <div class="quiz-num">08</div>
+      <div class="quiz-question">The Check Hook (Pivot Hook) involves:</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q8" value="a"> <span>Pivoting on the rear leg and throwing a rear hook</span></label>
+        <label class="quiz-option"><input type="radio" name="q8" value="b"> <span>Leaping at the opponent while throwing a lead hook</span></label>
+        <label class="quiz-option"><input type="radio" name="q8" value="c"> <span>Pivoting on the lead leg to the outside and throwing a lead hook</span></label>
+        <label class="quiz-option"><input type="radio" name="q8" value="d"> <span>Crossing the arms before unloading a hook</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Check Hook involves pivoting on the lead leg to the outside and throwing a lead hook, forcing an aggressive opponent to careen forward toward where you were standing. A staple of pure boxers like Floyd Mayweather."></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="quiz-card" id="q9">
+      <div class="quiz-num">09</div>
+      <div class="quiz-question">The Bolo Punch is classified as a variant of which punch?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q9" value="a"> <span>Hook</span></label>
+        <label class="quiz-option"><input type="radio" name="q9" value="b"> <span>Jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q9" value="c"> <span>Uppercut</span></label>
+        <label class="quiz-option"><input type="radio" name="q9" value="d"> <span>Cross</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Bolo Punch is a weaker variant of the uppercut. Its strength lies in its unpredictability — the fist is swung in an outward arc and up through the guard. Associated with Kid Gavilan, Roy Jones Jr., and Sugar Ray Leonard."></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="quiz-card" id="q10">
+      <div class="quiz-num">10</div>
+      <div class="quiz-question">The Step-Through Jab is ranked how among the most powerful jabs?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q10" value="a"> <span>The most powerful jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q10" value="b"> <span>The second most powerful jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q10" value="c"> <span>The third most powerful jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q10" value="d"> <span>A weak jab used for distraction</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The Step-Through Jab is described as the second most powerful jab. The Power Jab, which pushes off the back foot with full body weight and momentum, is ranked first."></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="quiz-card" id="q11">
+      <div class="quiz-num">11</div>
+      <div class="quiz-question">Which style adage is "take one punch to land two or three"?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q11" value="a"> <span>Pressure Fighter</span></label>
+        <label class="quiz-option"><input type="radio" name="q11" value="b"> <span>Swarmer</span></label>
+        <label class="quiz-option"><input type="radio" name="q11" value="c"> <span>Brawler</span></label>
+        <label class="quiz-option"><input type="radio" name="q11" value="d"> <span>Boxer-Puncher</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The Swarmer closes the distance to overwhelm opponents with combinations. Their adage: take one punch to land two or three. Famous swarmers include Manny Pacquiao, Joe Frazier, and Mike Tyson."></div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="quiz-card" id="q12">
+      <div class="quiz-num">12</div>
+      <div class="quiz-question">The American Hook is distinguished by which fist orientation?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q12" value="a"> <span>Thumb faces the user, palm facing downward</span></label>
+        <label class="quiz-option"><input type="radio" name="q12" value="b"> <span>Thumb angled downward, palm facing slightly outward</span></label>
+        <label class="quiz-option"><input type="radio" name="q12" value="c"> <span>Thumb faces up, palm facing the user</span></label>
+        <label class="quiz-option"><input type="radio" name="q12" value="d"> <span>Thumb facing downward, palm facing outward</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The American Hook has the fist oriented with the thumb facing up and the palm facing the user. Notable users include Mike Tyson, Floyd Mayweather, and Roy Jones Jr."></div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="quiz-card" id="q13">
+      <div class="quiz-num">13</div>
+      <div class="quiz-question">Which stance is described as most popular in the modern era, hands held by the chin or cheeks, well-rounded for any range?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q13" value="a"> <span>High Guard</span></label>
+        <label class="quiz-option"><input type="radio" name="q13" value="b"> <span>Long Guard</span></label>
+        <label class="quiz-option"><input type="radio" name="q13" value="c"> <span>Conventional Guard</span></label>
+        <label class="quiz-option"><input type="radio" name="q13" value="d"> <span>Low Guard</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Conventional Guard is the most popular stance in the modern era — hands by the chin or cheeks, bladed stance, well-rounded for defense or offense at any range."></div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="quiz-card" id="q14">
+      <div class="quiz-num">14</div>
+      <div class="quiz-question">The Liver Blow specifically targets which area of the body?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q14" value="a"> <span>The solar plexus</span></label>
+        <label class="quiz-option"><input type="radio" name="q14" value="b"> <span>The lower right side of the abdomen</span></label>
+        <label class="quiz-option"><input type="radio" name="q14" value="c"> <span>The lower left side of the abdomen</span></label>
+        <label class="quiz-option"><input type="radio" name="q14" value="d"> <span>The pit of the stomach</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The Liver Blow is a hook thrown from the left hand to the lower right side of the abdomen, where the liver lies. A bundle of nerves around the liver make even the toughest opponents drop to the canvas."></div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="quiz-card" id="q15">
+      <div class="quiz-num">15</div>
+      <div class="quiz-question">The Slide-Back Uppercut is thrown while doing what?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q15" value="a"> <span>Leaping toward the opponent</span></label>
+        <label class="quiz-option"><input type="radio" name="q15" value="b"> <span>Slipping to the outside of a punch</span></label>
+        <label class="quiz-option"><input type="radio" name="q15" value="c"> <span>Pulling away from the opponent</span></label>
+        <label class="quiz-option"><input type="radio" name="q15" value="d"> <span>Stepping forward with the lead foot</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Slide-Back Uppercut is thrown while pulling away from the opponent, often used to counter aggressive fighters. Notable users: James Toney, Ricardo Lopez, and Salvador Sanchez."></div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="quiz-card" id="q16">
+      <div class="quiz-num">16</div>
+      <div class="quiz-question">Which style is described as "dirty boxing" — fighting on the inside using collar ties, hand traps, and clinch work?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q16" value="a"> <span>Pressure Fighter</span></label>
+        <label class="quiz-option"><input type="radio" name="q16" value="b"> <span>Catch-and-Shoot</span></label>
+        <label class="quiz-option"><input type="radio" name="q16" value="c"> <span>Swarmer</span></label>
+        <label class="quiz-option"><input type="radio" name="q16" value="d"> <span>Brawler</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="d" data-explanation="The Brawler is described as aesthetically rough — 'dirty boxing'. They use wrestling, hand traps, collar ties, and clinch work to break their opponent's body and spirit. Roberto Duran and Henry Armstrong are prime examples."></div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="quiz-card" id="q17">
+      <div class="quiz-num">17</div>
+      <div class="quiz-question">The Swivel Jab is generally thrown from which position?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q17" value="a"> <span>While stepping backward</span></label>
+        <label class="quiz-option"><input type="radio" name="q17" value="b"> <span>From an open stance or after a cross</span></label>
+        <label class="quiz-option"><input type="radio" name="q17" value="c"> <span>From a crouching position</span></label>
+        <label class="quiz-option"><input type="radio" name="q17" value="d"> <span>While leaping toward the opponent</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The Swivel Jab is thrown from an open stance or after a cross/straight — when the rear shoulder is closer to the opponent. It resets into a bladed stance and can catch the opponent off guard during a vulnerable squared position."></div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="quiz-card" id="q18">
+      <div class="quiz-num">18</div>
+      <div class="quiz-question">The Shovel Hook is a hybrid between which two punches?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q18" value="a"> <span>A hook and a jab</span></label>
+        <label class="quiz-option"><input type="radio" name="q18" value="b"> <span>A hook and a straight</span></label>
+        <label class="quiz-option"><input type="radio" name="q18" value="c"> <span>A hook and an uppercut</span></label>
+        <label class="quiz-option"><input type="radio" name="q18" value="d"> <span>An uppercut and a cross</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="c" data-explanation="The Shovel Hook (also called the Mexican Hook) is a hybrid between a hook and an uppercut — thrown at an upward angle, generally from the lead hand toward the liver or pit of the stomach. Saul 'Canelo' Alvarez and Julio Cesar Chavez are its most famous users."></div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="quiz-card" id="q19">
+      <div class="quiz-num">19</div>
+      <div class="quiz-question">The Cross differs from the Straight primarily because:</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q19" value="a"> <span>It is thrown with the lead hand instead of the rear hand</span></label>
+        <label class="quiz-option"><input type="radio" name="q19" value="b"> <span>The elbow is slightly bent and the punch travels a small arc across the body</span></label>
+        <label class="quiz-option"><input type="radio" name="q19" value="c"> <span>It is aimed at the body rather than the head</span></label>
+        <label class="quiz-option"><input type="radio" name="q19" value="d"> <span>It must always be thrown over the opponent's jab</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="Unlike the Straight which travels in a direct line, the Cross has a slightly bent elbow and travels a small arc — across from the right side to the left, sometimes over the opponent's jab."></div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="quiz-card" id="q20">
+      <div class="quiz-num">20</div>
+      <div class="quiz-question">Which three fighters are the most famous examples of the Switch-Hitter style mentioned on the site?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q20" value="a"> <span>Floyd Mayweather, Manny Pacquiao, Vasyl Lomachenko</span></label>
+        <label class="quiz-option"><input type="radio" name="q20" value="b"> <span>Marvin Hagler, Terrence Crawford, Jaron Ennis</span></label>
+        <label class="quiz-option"><input type="radio" name="q20" value="c"> <span>Mike Tyson, Jack Dempsey, Joe Frazier</span></label>
+        <label class="quiz-option"><input type="radio" name="q20" value="d"> <span>Roy Jones Jr., Pernell Whitaker, Naseem Hamed</span></label>
+      </div>
+      <div class="quiz-feedback" data-correct="b" data-explanation="The Switch-Hitter style is described as rare but dangerous, used notably by 'Marvelous' Marvin Hagler, Terrence 'Bud' Crawford, and Jaron 'Boots' Ennis — all dangerous in both orthodox and southpaw stances."></div>
+    </div>
+
+    <div class="quiz-submit-row">
+      <button type="button" id="quiz-submit" class="quiz-submit-btn">Submit Quiz</button>
+    </div>
+
+  </form>
+
+  <!-- Results panel -->
+  <div id="quiz-results" class="quiz-results-panel" style="display:none;">
+    <div class="quiz-score-display">
+      <span id="quiz-score-num"></span>
+      <span class="quiz-score-denom">/ 20</span>
+    </div>
+    <div id="quiz-score-label" class="quiz-score-label"></div>
+    <button type="button" id="quiz-retry" class="quiz-retry-btn">Try Again</button>
+  </div>
+
 </div>
+
+<script>
+(function () {
+  var ANSWERS = {
+    q1:'b', q2:'c', q3:'d', q4:'c', q5:'c',
+    q6:'d', q7:'b', q8:'c', q9:'c', q10:'b',
+    q11:'b', q12:'c', q13:'c', q14:'b', q15:'c',
+    q16:'d', q17:'b', q18:'c', q19:'b', q20:'b'
+  };
+
+  var LABELS = [
+    'Beginner — keep reading the encyclopedia!',
+    'Amateur — solid foundation, keep studying.',
+    'Contender — you know your boxing.',
+    'Champion — outstanding boxing knowledge!',
+    'Perfect — you\'ve mastered the encyclopedia!'
+  ];
+
+  document.getElementById('quiz-submit').addEventListener('click', function () {
+    var score = 0;
+    var unanswered = [];
+
+    Object.keys(ANSWERS).forEach(function (q) {
+      var selected = document.querySelector('input[name="' + q + '"]:checked');
+      var card = document.getElementById(q);
+      var fb = card.querySelector('.quiz-feedback');
+      var correct = fb.getAttribute('data-correct');
+      var explanation = fb.getAttribute('data-explanation');
+
+      // Remove any prior state
+      card.classList.remove('quiz-correct', 'quiz-wrong');
+      card.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.remove('quiz-opt-correct', 'quiz-opt-wrong', 'quiz-opt-chosen');
+      });
+
+      if (!selected) {
+        unanswered.push(q);
+        return;
+      }
+
+      var chosen = selected.value;
+
+      // Mark all options
+      card.querySelectorAll('.quiz-option').forEach(function (opt) {
+        var val = opt.querySelector('input').value;
+        if (val === correct) opt.classList.add('quiz-opt-correct');
+        if (val === chosen && chosen !== correct) opt.classList.add('quiz-opt-wrong');
+        if (val === chosen) opt.classList.add('quiz-opt-chosen');
+      });
+
+      if (chosen === correct) {
+        score++;
+        card.classList.add('quiz-correct');
+      } else {
+        card.classList.add('quiz-wrong');
+      }
+
+      fb.innerHTML = '<span class="quiz-fb-icon">' + (chosen === correct ? '&#10003;' : '&#10007;') + '</span> ' + explanation;
+      fb.style.display = 'block';
+
+      // Lock inputs
+      card.querySelectorAll('input[type="radio"]').forEach(function (r) { r.disabled = true; });
+    });
+
+    if (unanswered.length > 0) {
+      unanswered.forEach(function (q) {
+        document.getElementById(q).classList.add('quiz-unanswered');
+      });
+      return; // Don't show results if unanswered
+    }
+
+    // Show results
+    document.getElementById('quiz-score-num').textContent = score;
+    var labelIdx = score <= 4 ? 0 : score <= 9 ? 1 : score <= 14 ? 2 : score <= 19 ? 3 : 4;
+    document.getElementById('quiz-score-label').textContent = LABELS[labelIdx];
+    document.getElementById('quiz-results').style.display = 'block';
+    document.getElementById('quiz-submit').style.display = 'none';
+    document.getElementById('quiz-results').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  document.getElementById('quiz-retry').addEventListener('click', function () {
+    // Reset all
+    Object.keys(ANSWERS).forEach(function (q) {
+      var card = document.getElementById(q);
+      card.classList.remove('quiz-correct', 'quiz-wrong', 'quiz-unanswered');
+      card.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.remove('quiz-opt-correct', 'quiz-opt-wrong', 'quiz-opt-chosen');
+      });
+      card.querySelectorAll('input[type="radio"]').forEach(function (r) {
+        r.disabled = false;
+        r.checked = false;
+      });
+      var fb = card.querySelector('.quiz-feedback');
+      fb.innerHTML = '';
+      fb.style.display = 'none';
+    });
+    document.getElementById('quiz-results').style.display = 'none';
+    document.getElementById('quiz-submit').style.display = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}());
+</script>
 {% endblock %}

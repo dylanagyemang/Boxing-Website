@@ -292,16 +292,11 @@ def scrape_boxer(page_name: str) -> dict | None:
         return None
 
     # ── Boxer name ────────────────────────────────────────────────────────────
-    name = resolved_title
-    caption = infobox.find("caption")
-    if caption:
-        name = clean(caption.get_text())
-    else:
-        th_title = infobox.find("th", attrs={"colspan": True})
-        if th_title:
-            candidate = clean(th_title.get_text())
-            if candidate:
-                name = candidate
+    # Use the page_name we chose as the canonical display name.
+    # Infobox names often contain honorifics (MBE, OBE, Sir), non-Latin
+    # script annotations (Japanese, Thai, Cyrillic) and other noise.
+    # Strip Wikipedia disambiguation suffixes like "(boxer)", "(Irish boxer)".
+    name = re.sub(r'\s*\([^)]+\)\s*$', '', page_name).strip()
 
     # ── Image ─────────────────────────────────────────────────────────────────
     image_url = None
