@@ -359,8 +359,25 @@ def scrape_boxer(page_name: str) -> dict | None:
     record_wins    = parse_int(get_infobox_value(info, "wins"))
     record_losses  = parse_int(get_infobox_value(info, "losses"))
     record_draws   = parse_int(get_infobox_value(info, "draws"))
-    wins_by_ko     = parse_int(get_infobox_value(info, "wins by ko", "ko wins", "knockouts", "kos"))
+    wins_by_ko     = parse_int(get_infobox_value(info, "ko", "kos", "wins by ko", "ko wins", "knockouts"))
     no_contests    = parse_int(get_infobox_value(info, "no contests", "no contest", "nc"))
+
+    # Fallback: some infoboxes use <td><td> rows (no <th>) for the record section
+    if wins_by_ko == 0:
+        KO_KEYS = {"ko", "kos", "knockouts", "ko wins", "wins by ko", "by ko"}
+        for row in infobox.find_all("tr"):
+            tds = row.find_all("td")
+            if len(tds) >= 2:
+                label = clean(tds[0].get_text()).lower()
+                if label in KO_KEYS:
+                    wins_by_ko = parse_int(clean(tds[1].get_text()))
+                    break
+
+    # Last resort: regex on infobox text
+    if wins_by_ko == 0:
+        m = re.search(r'\bKOs?\b[\s:–-]*(\d+)', infobox.get_text(separator=" "), re.IGNORECASE)
+        if m:
+            wins_by_ko = int(m.group(1))
 
     # Fallback: scan for a "W–L–D" style string anywhere on the page
     if record_wins == 0:
